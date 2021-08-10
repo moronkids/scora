@@ -1,0 +1,29 @@
+.scoring-scora {
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  /* Stroke */
+
+  border: 1px solid #e8e8e8;
+  /* Shadow - Box */
+
+  box-shadow: 0px 5px 20px #e7e7e7;
+  z-index: 1333;
+  & .ur_score {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+    color: #9c9c9c;
+    padding-right: 5%;
+    & span {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 150%;
+      color: #005f61;
+    }
+  }
+}

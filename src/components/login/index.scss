@@ -1,0 +1,33 @@
+.login {
+  &__logo-scora {
+    width: 184px;
+    height: 48px;
+    background-size: 184px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 48px;
+    @media (max-width: 574px) {
+      width: 152px;
+      height: 40px;
+      margin-top: 60px;
+      margin-bottom: 40px;
+      background-size: 152px;
+    }
+  }
+  @media (max-width: 574px) {
+    & .input-fields__title {
+      padding: 24px 0 0 0 !important;
+      font: $text-p2;
+      font-weight: 600;
+    }
+  }
+  & button {
+    @media (max-width: 574px) {
+      font: $text-p2;
+      font-weight: 600;
+    }
+  }
+  @import "./parts/form-box/form-box.scss";
+}

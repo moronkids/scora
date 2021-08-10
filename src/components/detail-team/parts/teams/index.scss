@@ -1,0 +1,274 @@
+.leaderboards {
+  height: auto;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  margin-top: 28px;
+  @media (max-width: 574px) {
+    margin-top: 24px;
+  }
+  & .flex-item-left {
+    flex: 50%;
+  }
+  & .flex-item-right {
+    @extend .flex-item-left;
+  }
+  &__list {
+    @media (max-width: 574px) {
+      //   flex-direction: column;
+    }
+  }
+  &__arrow-sort {
+    background-image: url("../../../../assets/img/icons/ArrowSort.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    display: block;
+  }
+  &__head {
+    border-bottom: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    & .title {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 150%;
+      color: #040404;
+      padding: 20px 40px;
+      @media (max-width: 768px) {
+        padding-right: 40px;
+        height: auto;
+      }
+      @media (max-width: 574px) {
+        padding: 20px 16px 20px 16px;
+        height: auto;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        /* identical to box height, or 27px */
+
+        /* Black */
+
+        color: #040404;
+      }
+    }
+    & .sorting {
+      padding: 20px 40px 20px 0;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: right;
+      color: #9c9c9c;
+      cursor: pointer;
+      @media (max-width: 768px) {
+        padding-right: 40px;
+        height: auto;
+      }
+      @media (max-width: 574px) {
+        padding: 20px 16px 20px 16px;
+        height: auto;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+
+        text-align: right;
+
+        /* Grey Primary */
+
+        color: #9c9c9c;
+      }
+    }
+  }
+  &__body {
+    padding-left: 40px;
+    padding-right: 40px;
+    min-height: 104px;
+    @media (max-width: 768px) {
+      padding-right: 40px;
+      height: auto;
+    }
+    @media (max-width: 574px) {
+      padding: 0px 16px 0 16px;
+      height: auto;
+    }
+    & .long-desc {
+      padding-top: 24px;
+      padding-bottom: 36px;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
+      /* or 24px */
+      border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 36px;
+      /* Text Primary */
+
+      color: #3a3a3a;
+      @media (max-width: 574px) {
+        font-size: 14px;
+        line-height: 160%;
+      }
+    }
+    & .attach-desc {
+      & h3 {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        /* identical to box height, or 24px */
+
+        /* Black */
+        padding-bottom: 22px;
+        color: #040404;
+        @media (max-width: 574px) {
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+      & .vid {
+        padding-bottom: 52px;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+      & .title-attach {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        /* identical to box height, or 24px */
+        word-wrap: break-word;
+        /* Text Secondary */
+
+        color: #4e4e4e;
+        @media (max-width: 574px) {
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+      & .link-attach {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        /* identical to box height, or 24px */
+        word-wrap: break-word;
+        text-decoration-line: underline;
+
+        /* Accent Green */
+
+        color: #005f61;
+        padding-bottom: 24px;
+        @media (max-width: 574px) {
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+    }
+    & .number {
+      font-family: Noto Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 27px;
+      text-align: center;
+      color: #040404;
+      padding-right: 24px;
+      @media (max-width: 574px) {
+        padding-right: 8px;
+        font-size: 18px;
+        line-height: 25px;
+      }
+    }
+    & .team {
+      & .img {
+        background: #ffffff;
+        background-image: url("../../../../assets/img/demo-logo/Logo-1.svg");
+        background-size: 80px;
+        width: 80px;
+        height: 80px;
+        border-radius: 2px;
+      }
+      & .name-team {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        color: #040404;
+        @media (max-width: 574px) {
+          font-size: 18px;
+          line-height: 150%;
+        }
+      }
+      & .shortdesc-team {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 150%;
+        color: #9c9c9c;
+        @media (max-width: 574px) {
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+    }
+    & .fav {
+      background-image: url("../../../../assets/img/icons/icon-fav-love.svg");
+      background-size: 24px;
+      width: 24px;
+      height: 24px;
+      padding-right: 8%;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    & .ur_score {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 150%;
+      color: #9c9c9c;
+      padding-right: 5%;
+      & span {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        color: #005f61;
+      }
+    }
+    & .total_score {
+      @extend .ur_score;
+      padding-left: 2%;
+    }
+    & .option {
+      margin-left: 3%;
+      width: 32px;
+      height: 32px;
+      display: block;
+      background-size: 32px;
+      background-image: url("../../../../assets/img/icons/Icon\ -\ Arrow.svg");
+    }
+  }
+}
+
+.btn-back-detail_team {
+  @media (max-width: 574px) {
+    padding-top: 40px !important;
+  }
+}

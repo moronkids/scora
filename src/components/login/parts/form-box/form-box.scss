@@ -1,0 +1,38 @@
+&__form-box {
+  width: 480px;
+  height: fit-content;
+  background: #ffffff;
+  box-shadow: 0px 5px 20px #e7e7e7;
+  border-radius: 8px;
+  padding: 40px 60px;
+  @media (max-width: 574px) {
+    width: 343px;
+    height: auto;
+    // margin: 0 16px 0 16px !important;
+    padding: 24px 28px;
+  }
+  & h3 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: #005f61;
+    padding-top: 40px;
+    // padding-bottom: 48px;
+    @media (max-width: 574px) {
+      font: $text-p2;
+      font-weight: 600;
+    }
+  }
+}
+&__signin {
+  font: $title-h1;
+  @media (max-width: 574px) {
+    font: $title-h2;
+  }
+}
+& .error_msg {
+  color: #f77272;
+}

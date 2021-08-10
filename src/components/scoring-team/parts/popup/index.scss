@@ -1,0 +1,88 @@
+.success_popup {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  min-height: 100%;
+  z-index: 12000;
+
+  &__overlay {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 78, 78, 0.25);
+    z-index: 200;
+    min-height: 100%;
+  }
+  &__box {
+    padding: 40px 0 48px 0;
+    z-index: 300;
+    width: 540px;
+    height: fit-content;
+    background: #ffffff;
+    border-radius: 8px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @media (max-width: 574px) {
+      width: 90%;
+    }
+
+    & .icon {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: auto;
+    }
+    & .desc {
+      & h1 {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        text-align: center;
+        color: #040404;
+      }
+      & p {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 150%;
+        text-align: center;
+        color: #3a3a3a;
+      }
+    }
+    & .action {
+      padding-top: 30px;
+      justify-content: center;
+      flex-direction: row;
+      display: flex;
+      column-gap: 40px;
+      @media (max-width: 574px) {
+        column-gap: 16px;
+      }
+      @media (max-width: 376px) {
+        column-count: 1;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+      & .next-team {
+        & .buttom-comp {
+          margin: auto;
+          display: flex;
+          @media (max-width: 321px) {
+            & button {
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

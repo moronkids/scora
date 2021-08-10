@@ -1,0 +1,82 @@
+/*!
+ * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+.overlay {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(78, 78, 78, 0.25);
+  z-index: 200;
+  min-height: 100%;
+}
+body {
+  background-color: #fdfdfd !important;
+  min-height: fit-content;
+}
+.homepage-scora,
+.detailteam-scora,
+.help-center,
+.scora-event {
+  background-color: #fdfdfd !important;
+}
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "code";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "input-group";
+@import "custom-forms";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "jumbotron";
+@import "alert";
+@import "progress";
+@import "media";
+@import "list-group";
+@import "close";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "utilities";
+@import "print";
+@import "typography/typography.scss";
+// @import "colors/colors.scss";
+//component
+@import "../../components/login/index.scss";
+@import "../../components/layouts/input-fields/index.scss";
+@import "../../components/layouts/header/header.scss";
+@import "../../components/homepage/index.scss";
+@import "../../components/detail-team/index.scss";
+@import "../../components/scoring-team/index.scss";
+@import "../../components/preview-score/index.scss";
+@import "../../components/help/index.scss";
+@import "../../components/list-event/index.scss";
+@import "../../components/forgot-password/index.scss";
+@import "../../components/layouts/account/index.scss";
+html,
+body {
+  margin: 0;
+}
+a {
+  color: transparent !important;
+}

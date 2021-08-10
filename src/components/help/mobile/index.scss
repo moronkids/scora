@@ -1,0 +1,106 @@
+.mobile-view {
+  &__list {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: fit-content;
+    padding: 20px;
+    margin-bottom: 24px;
+    & .tabx {
+      //bates
+      //   padding: 20px;
+      & img {
+        width: 100%;
+      }
+      & h1 {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 150%;
+        /* identical to box height, or 36px */
+
+        /* Black */
+
+        color: #040404;
+      }
+      & h2 {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        /* identical to box height, or 24px */
+
+        /* Black */
+
+        color: #040404;
+      }
+      & p {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 160%;
+        padding-top: 8px;
+        /* or 22px */
+
+        /* Text Primary */
+
+        color: #3a3a3a;
+      }
+      & .contact-us-section {
+        width: 100%;
+        height: fit-content;
+        background: #e4eeee;
+        border-radius: 12px;
+        padding: 16px 20px;
+        & h1 {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 160%;
+          padding: 0;
+          margin: 0;
+          /* or 22px */
+
+          /* Black */
+
+          color: #040404;
+        }
+        & p {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 160%;
+          /* or 22px */
+
+          /* Text Secondary */
+
+          color: #4e4e4e;
+          padding: 0;
+          margin: 0;
+        }
+        & span {
+          color: #005f61;
+          font-weight: 700;
+        }
+      }
+      //bates
+    }
+    & p {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      color: #040404;
+      //   padding: 20px;
+      margin: 0px;
+      // padding-bottom: 8px;
+    }
+  }
+}

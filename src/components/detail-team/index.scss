@@ -1,0 +1,8 @@
+.detailteam-scora {
+  padding-bottom: 56px;
+  @media (max-width: 574px) {
+    padding-bottom: 100px;
+  }
+  @import "parts/teams/index.scss";
+  @import "parts/scoring/scoring.scss";
+}

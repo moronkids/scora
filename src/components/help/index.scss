@@ -1,0 +1,78 @@
+.help-center {
+  padding-top: 56px;
+  @media (max-width: 574px) {
+    padding-top: 40px;
+  }
+  & .buttonback {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    color: #9c9c9c;
+    @media (max-width: 574px) {
+      color: #3a3a3a;
+    }
+  }
+  &__option {
+    padding-top: 24px;
+    column-count: 3;
+    column-gap: 30px;
+    @media (max-width: 996px) {
+      column-count: 1;
+      padding-bottom: 24px;
+    }
+    & .list {
+      width: 350px;
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      box-sizing: border-box;
+      border-radius: 8px;
+      height: fit-content;
+      min-height: 125px;
+      width: 100%;
+      padding: 24px;
+      cursor: pointer;
+      @media (max-width: 1200px) {
+        height: 150px;
+      }
+      @media (max-width: 996px) {
+        margin-bottom: 24px;
+        padding: 20px 20px 18px 20px;
+        height: fit-content;
+        min-height: fit-content;
+      }
+      & h3 {
+        margin: 0;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        color: #040404;
+        // text-overflow: ellipsis;
+        // overflow: hidden;
+        // white-space: nowrap;
+        @media (max-width: 574px) {
+          font-size: 18px;
+        }
+      }
+      & p {
+        margin: 0;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 150%;
+        color: #4e4e4e;
+
+        @media (max-width: 574px) {
+          display: none;
+        }
+      }
+    }
+  }
+  @import "parts/menu/learn-scora/learn-scora.scss";
+}
+@import "parts/menu/contact-us/contact-us.scss";
+@import "mobile/index.scss";

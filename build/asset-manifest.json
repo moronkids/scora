@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d4dd9594.chunk.css",
+    "main.js": "/static/js/main.478cad70.chunk.js",
+    "main.js.map": "/static/js/main.478cad70.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8025726c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8025726c.js.map",
+    "static/css/2.b9b0d4c4.chunk.css": "/static/css/2.b9b0d4c4.chunk.css",
+    "static/js/2.ee2efb08.chunk.js": "/static/js/2.ee2efb08.chunk.js",
+    "static/js/2.ee2efb08.chunk.js.map": "/static/js/2.ee2efb08.chunk.js.map",
+    "static/js/3.7834a959.chunk.js": "/static/js/3.7834a959.chunk.js",
+    "static/js/3.7834a959.chunk.js.map": "/static/js/3.7834a959.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.b9b0d4c4.chunk.css.map": "/static/css/2.b9b0d4c4.chunk.css.map",
+    "static/css/main.d4dd9594.chunk.css.map": "/static/css/main.d4dd9594.chunk.css.map",
+    "static/js/2.ee2efb08.chunk.js.LICENSE.txt": "/static/js/2.ee2efb08.chunk.js.LICENSE.txt",
+    "static/media/Arrow-down.73974812.svg": "/static/media/Arrow-down.73974812.svg",
+    "static/media/styles.scss": "/static/media/icon-fav-love.5312941c.svg",
+    "static/media/Back.325ae49c.svg": "/static/media/Back.325ae49c.svg",
+    "static/media/Email.51d05485.svg": "/static/media/Email.51d05485.svg",
+    "static/media/Phone.01821e8b.svg": "/static/media/Phone.01821e8b.svg",
+    "static/media/Profile.ba068404.svg": "/static/media/Profile.ba068404.svg",
+    "static/media/Scora-black.9481d088.svg": "/static/media/Scora-black.9481d088.svg",
+    "static/media/Scora-white.5e9488db.svg": "/static/media/Scora-white.5e9488db.svg",
+    "static/media/Scora.f2dac081.svg": "/static/media/Scora.f2dac081.svg",
+    "static/media/Success.e1e9f90b.svg": "/static/media/Success.e1e9f90b.svg",
+    "static/media/Wave-mobile.e64ec3b0.svg": "/static/media/Wave-mobile.e64ec3b0.svg",
+    "static/media/Wave.4a0d2eaf.svg": "/static/media/Wave.4a0d2eaf.svg",
+    "static/media/img-start-using-scora.7ad571ba.svg": "/static/media/img-start-using-scora.7ad571ba.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8025726c.js",
+    "static/css/2.b9b0d4c4.chunk.css",
+    "static/js/2.ee2efb08.chunk.js",
+    "static/css/main.d4dd9594.chunk.css",
+    "static/js/main.478cad70.chunk.js"
+  ]
+}

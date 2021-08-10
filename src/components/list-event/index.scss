@@ -1,0 +1,30 @@
+.scora-event {
+  @import "parts/event/index.scss";
+  @import "parts/popup/index.scss";
+  &__tab {
+    cursor: pointer;
+    & .tab {
+      padding: 40px 16px;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: #9c9c9c;
+      padding-bottom: 16px;
+    }
+    & .border-tabs {
+      //   border-bottom: 4px solid #005f61;
+      border-radius: 4px 4px 0px 0px;
+      height: 4px;
+      width: 100%;
+      background: #005f61;
+    }
+    & .active {
+      @extend .tab;
+      color: #005f61;
+      //   border-bottom: 4px solid #005f61;
+      //   padding-bottom: 16px;
+    }
+  }
+}

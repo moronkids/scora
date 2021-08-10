@@ -1,0 +1,28 @@
+.rates {
+  & h3 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+
+    text-align: center;
+    margin: 0;
+    color: #408788;
+  }
+  & p {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+    margin: 0;
+    text-align: center;
+
+    /* Accent Green */
+
+    color: #005f61;
+  }
+}

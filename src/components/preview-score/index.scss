@@ -1,0 +1,30 @@
+.final-score {
+  & .current {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 150%;
+    /* identical to box height, or 42px */
+
+    text-align: right;
+
+    /* Accent Green */
+
+    color: #005f61;
+  }
+  & span {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    /* identical to box height, or 30px */
+
+    text-align: center;
+
+    /* Text Secondary */
+
+    color: #4e4e4e;
+  }
+}
