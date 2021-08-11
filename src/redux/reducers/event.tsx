@@ -64,6 +64,7 @@ export default (state = initialState, { type, payload }: any) => {
             if (payload.status !== 200) return { ...state };
             // state['detail_team'] = payload.data.results;
             state['detail_team'][0]['last_updated'] = new Date();
+            state['detail_team'][0]['score'] = payload.data.data.total
             // state['team']
             // alert("masuk sini")
 

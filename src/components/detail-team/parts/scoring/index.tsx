@@ -8,10 +8,11 @@ const Scoring = (props: { aspect: any }) => {
   let { name } = useParams()
   const final = name.split('_')
   const { scoring, setScoring, finalScore, setFinalScore, setPreviewScore, previewScore, complete, setComplete } = useContext(Hooks)
-  const { datax, aspect, team } = useSelector((state: Store) => ({
+  const { datax, aspect, team, score_team } = useSelector((state: Store) => ({
     datax: state.event.results,
     aspect: state.event.aspect,
-    team: state.event.team
+    team: state.event.team,
+    score_team: state.event.detail_team[state.event.detail_team.length - 1]
   }));
 
   useEffect(() => {
@@ -19,11 +20,12 @@ const Scoring = (props: { aspect: any }) => {
 
   return (
     <div className="scoring-scora fixed-bottom d-md-none d-flex justify-content-between px-3 " style={{ columnCount: scoring ? '1' : '2' }}>
+      {/* {console.log(score_team, "panji")} */}
       {(scoring && previewScore) || !scoring ? <>
         <div className="ur_score d-md-none d-block my-auto">
           Your &nbsp;Score: <br />
           {/* <span className="mx-auto">{finalScore === 0 ? team?.[final[1]].grandtotal : finalScore}</span> */}
-          <span className="mx-auto">{team?.[final[1]].grandtotal}</span>
+          <span className="mx-auto">{score_team?.score || team?.[final[1]].grandtotal}</span>
         </div></> : ''}
       <div className={`my-auto ${(scoring && !previewScore) && 'w-100'}`}>
         {scoring && previewScore && complete ? <ButtonScoring
