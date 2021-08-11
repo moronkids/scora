@@ -15,6 +15,7 @@ const initialState = {
 };
 // This export default will control your state for your application
 export default (state = initialState, { type, payload }: any) => {
+    // console.log(payload, 'hasilnya ngab');
     switch (type) {
         case GET_EVENT: {
 
@@ -42,7 +43,7 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case GET_DETAIL_TEAM: {
-            console.log(payload, "hohoho")
+            console.log(payload, "nkri")
             if (payload === undefined) return { ...state }
             if (payload === 'reset') {
                 state['detail_team'][0] = []
@@ -58,10 +59,12 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case POST_SUBMIT_SCORE: {
+            console.log(payload, 'hasilnya ngab')
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             // state['detail_team'] = payload.data.results;
             state['detail_team'][0]['last_updated'] = new Date();
+            // state['team']
             // alert("masuk sini")
 
             return {
@@ -80,7 +83,7 @@ export default (state = initialState, { type, payload }: any) => {
         case POST_FAV: {
             if (payload === 'reset') {
                 state['fav'] = 'reset'
-                return { ...state};
+                return { ...state };
             }
             if (payload.status !== 200) {
                 state['fav'] = 'Failed hit to server!';

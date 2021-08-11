@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Hooks } from "providers/index";
 import { useDispatch, useSelector } from "react-redux";
 import { Store } from "redux";
-import { HIT_SUBMIT_SCORE } from "redux/actions";
+import { HIT_SUBMIT_SCORE, HIT_TEAM } from "redux/actions";
 import { useParams } from "react-router";
 const Button = styled.button`
   cursor:pointer;
@@ -53,7 +53,9 @@ const Buttons = props => {
     setScoring,
     previewScore,
     setPreviewScore,
-    criteria
+    criteria,
+    phase_active,
+    order
   } = useContext(Hooks);
   useEffect(() => {
 
@@ -103,6 +105,7 @@ const Buttons = props => {
     }
     console.log(data, "ini payloadnya");
     await dispatch({ type: HIT_SUBMIT_SCORE, payload: datas })
+    await dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] })
   }
   return (
     <div className="buttom-comp " style={{ width: props.width }}>

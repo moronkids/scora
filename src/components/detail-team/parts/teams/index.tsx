@@ -14,9 +14,10 @@ const Leaderboards = () => {
   let { name } = useParams()
   const final = name.split('_')
   const { finalScore, setFinalScore, next, setNext, submitted, setSubmitted } = useContext(Hooks);
-  const { detail_team, team } = useSelector((state: Store) => ({
-    detail_team: state.event.detail_team[0],
-    team: state.event.team
+  const { detail_team, team, length_team } = useSelector((state: Store) => ({
+    detail_team: state.event.detail_team,
+    team: state.event.team,
+    length_team: state.event.detail_team.length
   }))
 
   return (
@@ -38,7 +39,8 @@ const Leaderboards = () => {
                 <div className="col pr-0">
                   <div className="name-team d-flex">
                     <div className="justify-content-start w-auto pr-2">
-                      {detail_team?.display_name || <ReactPlaceholder
+                      {console.log(detail_team[length_team - 1]?.display_name, "harga mati")}
+                      {detail_team[length_team - 1]?.display_name || <ReactPlaceholder
                         type="rect"
                         ready={false}
                         color="#E0E0E0"

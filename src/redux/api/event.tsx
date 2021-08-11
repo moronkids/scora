@@ -44,6 +44,7 @@ export const apiGetDetailTeam = async (iData: any) => {
 
 
     const datas = await http.get(`${api_logged_api + getDetailTeam + iData}`);
+    console.log('nkri', datas)
     return datas;
 }
 

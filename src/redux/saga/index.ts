@@ -76,7 +76,7 @@ function* getTeam({ payload }: any) {
     try {
         const team: GetTeam = yield call(apiGetTeamByPhase, payload);
         yield put({ type: GET_TEAM, payload: team });
-        yield put({ type: GET_DETAIL_TEAM, payload: 'reset' });
+        // yield put({ type: GET_DETAIL_TEAM, payload: 'reset' });
         yield put({ type: DO_LOADING, payload: false });
     } catch (error) {
         yield put({ type: DO_LOADING, payload: false });
@@ -143,7 +143,7 @@ type postSubmitScoreSagas = SagaReturnType<typeof apiPostSubmitScore>
 function* postSubmitScoreSaga({ payload }: any) {
     try {
         const score: postSubmitScoreSagas = yield call(apiPostSubmitScore, payload);
-        console.log(score, 'hasilnya');
+        console.log(score, 'hasilnya ngab');
         yield put({ type: POST_SUBMIT_SCORE, payload: score });
 
         // yield put({ type: POST_SCORE, payload: score });

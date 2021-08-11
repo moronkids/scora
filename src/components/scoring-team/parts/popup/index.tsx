@@ -21,9 +21,9 @@ const Index = () => {
     }
     useEffect(() => {
         setNext(false)
-        setSubmitted(false)
         console.log(updated, 'cekiceki');
 
+        setSubmitted(false)
         if (updated !== null && updated !== undefined) {
             console.log(updated, "cekicekio")
             setSubmitted(true)
