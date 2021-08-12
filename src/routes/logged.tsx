@@ -7,9 +7,9 @@ import { Hooks } from "providers"
 import Stage from 'components/list-event/parts/popup'
 import SubmitSuccessPopup from 'components/scoring-team/parts/popup'
 const Guest = ({ component: Component, ...rest }) => {
-  const [bgActive, setbgActive] = useState(false);
 
-  const { contactUs, setContactUs, sorting, profile, setProfile, setSorting } = useContext(Hooks);
+
+  const { contactUs, setContactUs, sorting, profile, setProfile, setSorting, bgActive, setbgActive } = useContext(Hooks);
   useEffect(() => {
     if (sorting || profile) {
       setbgActive(true)

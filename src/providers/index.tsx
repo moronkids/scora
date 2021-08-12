@@ -3,7 +3,8 @@ export const Hooks = createContext({} as any);
 const Index = (props: { children: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }) => {
 
   //phase
-  const [currentPhase, setCurrentPhase] = useState()
+  const [currentPhase, setCurrentPhase] = useState();
+  const [bgActive, setbgActive] = useState(false);
   //scoring
   const [sorting, setSorting] = useState(false);
   const [next, setNext] = useState(false)
@@ -119,7 +120,8 @@ const Index = (props: { children: boolean | React.ReactChild | React.ReactFragme
     next, setNext,
     currentPhase, setCurrentPhase,
     phase_, setphase_,
-    complete, setComplete
+    complete, setComplete,
+    bgActive, setbgActive
   };
   return <Hooks.Provider value={valx}>{props.children}</Hooks.Provider>;
 };
