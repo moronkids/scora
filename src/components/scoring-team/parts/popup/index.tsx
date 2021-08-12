@@ -44,7 +44,7 @@ const Index = () => {
                 <div className="success_popup__box m-auto">
                     <img src={IconSuccess} alt="" className="icon" />
                     <div className="desc">
-                        <h1>Scoring Success</h1>
+                        <h1>Success!</h1>
                         <p>Your score for Powerbrain has been submitted</p>
                     </div>
                     <div className="action d-flex">
@@ -67,7 +67,7 @@ const Index = () => {
                         <Link to="/">
                             <div className="next-team">
                                 <Button
-                                    name="To Leaderboards"
+                                    name="To Leaderboard"
                                     color="#005F61"
                                     border="1px solid #CCDFDF"
                                     background="#ffffff"

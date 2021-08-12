@@ -100,10 +100,10 @@ export default (state = initialState, { type, payload }: any) => {
             console.log(payload, "hepi");
 
             if (payload.data.description == 'favorite_removed') {
-                state['fav'] = 'Success remove to Favorite'
+                state['fav'] = 'The team removed from your favorite list'
             }
             else {
-                state['fav'] = 'Success add to Favorite'
+                state['fav'] = 'The team added to your favorite list'
             }
             return {
                 ...state,

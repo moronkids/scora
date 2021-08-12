@@ -23,7 +23,7 @@ const Scoring = (props: { aspect: any }) => {
       {/* {console.log(score_team, "panji")} */}
       {(scoring && previewScore) || !scoring ? <>
         <div className="ur_score d-md-none d-block my-auto">
-          Your &nbsp;Score: <br />
+          Yours: <br />
           {/* <span className="mx-auto">{finalScore === 0 ? team?.[final[1]].grandtotal : finalScore}</span> */}
           <span className="mx-auto">{score_team?.score || team?.[final[1]].grandtotal}</span>
         </div></> : ''}

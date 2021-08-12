@@ -20,16 +20,17 @@ const ForgotPass = () => {
         <div className="box-forgot mx-auto">
           <h1>Forgot your password?</h1>
           <h2>
-            Please call your organizer/admin officer this <b>[Event Name]</b>{" "}
-              or{" "}
+            {/* Please call your organizer/admin officer this <b>[Event Name]</b>{" "}
+              or{" "} */}
+            Please call [Event Name] 's staff or click here:
             <b
               style={{ color: "#005F61", cursor: 'pointer' }}
               onClick={e => setContactUs(!contactUs)}
             >
-              Contact Us
-              </b>
-              .
-            </h2>
+              &nbsp;Contact Us
+            </b>
+            .
+          </h2>
         </div>
         <Link to="/login">
           <h3>Back to login</h3>

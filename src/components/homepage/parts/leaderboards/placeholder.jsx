@@ -41,7 +41,7 @@ const placeholder = () => {
 
                 <div className="row pl-3 pt-3 d-md-none d-flex">
                   <div className="ur_score d-md-none d-block justify-content-end my-auto">
-                    Your&nbsp;Score: <br />
+                    Yours: <br />
                     <span className="mx-auto">
                       <ReactPlaceholder
                         type="textRow"
@@ -68,7 +68,7 @@ const placeholder = () => {
 
           <div className="fav d-md-block d-none justify-content-end my-auto" />
           <div className="ur_score d-md-block d-none justify-content-end my-auto">
-            Your&nbsp;Score: <br />
+            Yours: <br />
             <span className="mx-auto">
               <ReactPlaceholder
                 type="textRow"

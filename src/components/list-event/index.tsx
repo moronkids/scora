@@ -55,8 +55,8 @@ const ListEvent = () => {
       >
         {current.length > 0 ? current : <>
           <h4 className="text-center" style={{ paddingTop: '20px' }}>
-            Sorry, you didn't have any current events
-        </h4>
+            You have no event available
+          </h4>
         </>}
 
       </div>
@@ -66,8 +66,8 @@ const ListEvent = () => {
       >
         {previous.length > 0 ? previous : <>
           <h4 className="text-center" style={{ paddingTop: '20px' }}>
-            Sorry, you didn't have any previous events
-        </h4>
+            You have no event available
+          </h4>
         </>}
       </div>
     </div>

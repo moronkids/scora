@@ -24,14 +24,9 @@ const Leaderboards = () => {
   let data: {} | null | undefined = [];
   const temp_data: {} | null | undefined = [];
 
-  const notify = (e) => toast.success(e, {
-    className: css({
-      background: "red !important",
-      color: "white !important",
-      fontWeight: "bold"
-    }),
+  const notify = (e) => toast(e, {
     position: "top-right",
-    autoClose: 5000,
+    autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -96,7 +91,8 @@ const Leaderboards = () => {
 
                   <div className="row pl-3 pt-3 d-md-none d-flex">
                     <div className="ur_score d-md-none d-block justify-content-end my-auto">
-                      Your&nbsp;Score: <br />
+                      {/* Your&nbsp;Score: <br /> */}
+                      Yours: <br />
                       <span className="mx-auto">{team[i].total}</span>
                     </div>
                     <div className="pl-4 total_score d-md-none d-block justify-content-end my-auto">
@@ -111,7 +107,7 @@ const Leaderboards = () => {
 
             <div className="fav d-md-block d-none justify-content-end my-auto" style={{ filter: team[i].is_favorite ? 'none' : 'grayscale(1)' }} onClick={(e) => setfavoritex([team[i].id, phase_active, true])} />
             <div className="ur_score d-md-block d-none justify-content-end my-auto">
-              Your&nbsp;Score: <br />
+              Yours: <br />
               <span className="mx-auto">{team[i].total}</span>
             </div>
             <div className="total_score d-md-block d-none justify-content-end my-auto">
@@ -130,7 +126,7 @@ const Leaderboards = () => {
     <div className="container">
       <div className="leaderboards">
         <div className="leaderboards__head d-flex flex-row mb-3">
-          <div className="title justify-content-start">Leaderboards</div>
+          <div className="title justify-content-start">Leaderboard</div>
           <div className="d-flex sorting justify-content-end my-auto w-100">
             <Sorting />
             <div onClick={e => setSorting(!sorting)}>
@@ -144,7 +140,7 @@ const Leaderboards = () => {
         </div>
         {console.log(temp_data, data.length, "zloading")}
         {
-          loading ? <Placeholder /> : data.length > 0 ? data : <p className="text-center">data not found</p>
+          loading ? <Placeholder /> : data.length > 0 ? data : <p className="text-center">No data available</p>
         }
       </div>
     </div>

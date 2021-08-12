@@ -29,7 +29,7 @@ const Leaderboards = () => {
       </div>
       <div className="leaderboards">
         <div className="leaderboards__head d-flex flex-row mb-3">
-          <div className="title justify-content-start w-100">Detail Team</div>
+          <div className="title justify-content-start w-100">Team Detail</div>
         </div>
         <div className="leaderboards__body">
           <div className="leaderboards__list d-flex my-auto w-100 py-sm-0 py-3">
@@ -56,7 +56,8 @@ const Leaderboards = () => {
               </div>
             </div>
             <div className="ur_score d-md-block d-none justify-content-end my-auto">
-              Your&nbsp;Score: <br />
+              {/* Your&nbsp;Score: <br /> */}
+              Yours: <br />
               <span className="mx-auto">{team?.[final[1]].grandtotal}</span>
             </div>
             <div className="justify-content-center my-auto d-none d-md-block">

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.d4dd9594.chunk.css",
-    "main.js": "/static/js/main.478cad70.chunk.js",
-    "main.js.map": "/static/js/main.478cad70.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8025726c.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8025726c.js.map",
-    "static/css/2.b9b0d4c4.chunk.css": "/static/css/2.b9b0d4c4.chunk.css",
-    "static/js/2.ee2efb08.chunk.js": "/static/js/2.ee2efb08.chunk.js",
-    "static/js/2.ee2efb08.chunk.js.map": "/static/js/2.ee2efb08.chunk.js.map",
-    "static/js/3.7834a959.chunk.js": "/static/js/3.7834a959.chunk.js",
-    "static/js/3.7834a959.chunk.js.map": "/static/js/3.7834a959.chunk.js.map",
+    "main.css": "/static/css/main.7cb6ba30.chunk.css",
+    "main.js": "/static/js/main.8c3defc2.chunk.js",
+    "main.js.map": "/static/js/main.8c3defc2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.22f586c0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.22f586c0.js.map",
+    "static/css/2.ebf8988d.chunk.css": "/static/css/2.ebf8988d.chunk.css",
+    "static/js/2.134f36fb.chunk.js": "/static/js/2.134f36fb.chunk.js",
+    "static/js/2.134f36fb.chunk.js.map": "/static/js/2.134f36fb.chunk.js.map",
+    "static/js/3.f131b591.chunk.js": "/static/js/3.f131b591.chunk.js",
+    "static/js/3.f131b591.chunk.js.map": "/static/js/3.f131b591.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.b9b0d4c4.chunk.css.map": "/static/css/2.b9b0d4c4.chunk.css.map",
-    "static/css/main.d4dd9594.chunk.css.map": "/static/css/main.d4dd9594.chunk.css.map",
-    "static/js/2.ee2efb08.chunk.js.LICENSE.txt": "/static/js/2.ee2efb08.chunk.js.LICENSE.txt",
+    "static/css/2.ebf8988d.chunk.css.map": "/static/css/2.ebf8988d.chunk.css.map",
+    "static/css/main.7cb6ba30.chunk.css.map": "/static/css/main.7cb6ba30.chunk.css.map",
+    "static/js/2.134f36fb.chunk.js.LICENSE.txt": "/static/js/2.134f36fb.chunk.js.LICENSE.txt",
     "static/media/Arrow-down.73974812.svg": "/static/media/Arrow-down.73974812.svg",
     "static/media/styles.scss": "/static/media/icon-fav-love.5312941c.svg",
     "static/media/Back.325ae49c.svg": "/static/media/Back.325ae49c.svg",
@@ -29,10 +29,10 @@
     "static/media/img-start-using-scora.7ad571ba.svg": "/static/media/img-start-using-scora.7ad571ba.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8025726c.js",
-    "static/css/2.b9b0d4c4.chunk.css",
-    "static/js/2.ee2efb08.chunk.js",
-    "static/css/main.d4dd9594.chunk.css",
-    "static/js/main.478cad70.chunk.js"
+    "static/js/runtime-main.22f586c0.js",
+    "static/css/2.ebf8988d.chunk.css",
+    "static/js/2.134f36fb.chunk.js",
+    "static/css/main.7cb6ba30.chunk.css",
+    "static/js/main.8c3defc2.chunk.js"
   ]
 }

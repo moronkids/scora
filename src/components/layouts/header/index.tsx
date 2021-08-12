@@ -126,7 +126,7 @@ const Header = (props: { ishelp: any; headers: string; }) => {
           </div>
         ) : (
           <div>
-            <h3 className="header-scora__active-in">You active in :</h3>
+            <h3 className="header-scora__active-in">Active session :</h3>
             <div className="d-flex">
               <div className="header-scora__box-in d-flex d-inline">
                 <p className="m-auto">{char}</p>

@@ -5,7 +5,7 @@ const Button = (props: { padding: any; }) => {
   return (
     <>
       <Link to="/">
-        <div className="buttonback" style={{ padding: props.padding }}>&nbsp;{"<"}&nbsp;Back to Leaderboards</div></Link>
+        <div className="buttonback" style={{ padding: props.padding }}>&nbsp;{"<"}&nbsp;Back to Leaderboard</div></Link>
     </>
   );
 };
