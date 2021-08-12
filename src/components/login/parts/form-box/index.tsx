@@ -41,6 +41,9 @@ const FormBox = () => {
     status: state.auth
   }));
   const notify = (e) => toast(e, {
+    className: 'toastify-bg-error',
+    bodyClassName: "toastify-text-success",
+    progressClassName: 'toastify-progress-bar',
     position: "top-right",
     autoClose: 3000,
     hideProgressBar: false,

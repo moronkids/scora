@@ -25,6 +25,9 @@ const Leaderboards = () => {
   const temp_data: {} | null | undefined = [];
 
   const notify = (e) => toast(e, {
+    className: 'toastify-bg-success',
+    bodyClassName: "toastify-text-success",
+    progressClassName: 'toastify-progress-bar',
     position: "top-right",
     autoClose: 3000,
     hideProgressBar: false,

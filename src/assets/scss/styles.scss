@@ -24,6 +24,38 @@ body {
 .scora-event {
   background-color: #fdfdfd !important;
 }
+.toastify-bg-success {
+  background: #44a08d !important; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #093637,
+    #44a08d
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #093637,
+    #44a08d
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.toastify-text-success {
+  color: #fff !important;
+}
+.toastify-progress-bar {
+  background: #fff !important;
+}
+.toastify-bg-error {
+  background: #e96443 !important; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #904e95,
+    #e96443
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #904e95,
+    #e96443
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 @import "functions";
 @import "variables";
 @import "mixins";
