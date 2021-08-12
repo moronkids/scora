@@ -30,7 +30,7 @@ const Guest = ({ component: Component, ...rest }) => {
             <div className="overlay-transparent" style={{
               width: '100vw',
               height: '100vh',
-              zIndex: '9',
+              zIndex: '101',
               position: 'fixed',
               background: 'transparent',
               display: bgActive ? 'block' : 'none'
