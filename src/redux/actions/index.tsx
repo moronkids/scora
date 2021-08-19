@@ -24,6 +24,9 @@ export const HIT_PHASE = "HIT_PHASE";
 export const GET_PHASE_EVENT = "GET_PHASE_EVENT";
 export const HIT_PHASE_EVENT = "HIT_PHASE_EVENT";
 
+export const GET_CURRENT_PHASE_EVENT = "GET_CURRENT_PHASE_EVENT";
+export const HIT_CURRENT_PHASE_EVENT = "HIT_CURRENT_PHASE_EVENT";
+
 export const GET_TEAM = "GET_TEAM";
 export const HIT_TEAM = "HIT_TEAM";
 

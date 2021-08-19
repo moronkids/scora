@@ -3,11 +3,13 @@ import { Hooks } from "providers";
 import Outside from "components/layouts/buttons/outside-components";
 import Phone from "assets/img/contact-us/Phone.svg";
 import Email from "assets/img/contact-us/Email.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Store } from "redux";
 import { Link, useLocation } from 'react-router-dom';
 import close_popup from 'assets/img/icons/Icon Close.svg'
+import { HIT_CURRENT_PHASE_EVENT } from "redux/actions";
 const PopUp = props => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const { stage, setStage, popup, setProfile, setphase, phase_active, setphase_, setEvent } = useContext(Hooks);
   const { event, phase } = useSelector((state: Store) => ({
@@ -18,13 +20,19 @@ const PopUp = props => {
     // alert("sdsd")
     setProfile(false)
   }, [location.pathname])
+  const changePhase = (payload) => {
+    const data = {
+      event: payload
+    }
+    dispatch({ type: HIT_CURRENT_PHASE_EVENT, payload: data })
+  }
   const phasex = [];
   console.log(popup, "cheki")
   for (let x in popup[1]) {
     phasex.push(
       <div className="align-content-start flex-wrap pb-2" >
         <Link to="/">
-          <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false) }}>
+          <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); }}>
             <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div>
           </div></Link>
       </div>

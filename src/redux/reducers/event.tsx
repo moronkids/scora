@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_ASPECT_PHASE_EVENT, GET_DETAIL_TEAM, GET_EVENT, GET_PHASE, GET_PHASE_EVENT, GET_TEAM, POST_FAV, POST_SUBMIT_SCORE } from 'redux/actions'
+import { GET_ASPECT_PHASE_EVENT, GET_CURRENT_PHASE_EVENT, GET_DETAIL_TEAM, GET_EVENT, GET_PHASE, GET_PHASE_EVENT, GET_TEAM, POST_FAV, POST_SUBMIT_SCORE } from 'redux/actions'
 
 // Define your state here
 const initialState = {
@@ -20,6 +20,16 @@ const initialState = {
 export default (state = initialState, { type, payload }: any) => {
     console.log(payload, 'hasilnya ngab');
     switch (type) {
+
+        case GET_CURRENT_PHASE_EVENT: {
+
+            // if (payload === undefined) return { ...state }
+            // if (payload.status !== 200) return { ...state };
+            // state['results'] = payload.data.results;
+            return {
+                ...state,
+            };
+        }
         case GET_EVENT: {
 
             if (payload === undefined) return { ...state }
@@ -43,8 +53,6 @@ export default (state = initialState, { type, payload }: any) => {
 
             // let phase_arr = state['phase_arr'].length
             console.log(payload, "ndanku")
-
-
             state['phase_arr'][payload[1]] = payload[0].data.results
 
             return {

@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Hooks } from "providers";
 const Rates = (props) => {
-  const { update_score, criteria, setCriteria } = useContext(Hooks);
-  const criteriax = props.criteria;
+  const { update_score, criteria, setCriteria, n, setN } = useContext(Hooks);
+  let criteriax = props.criteria;
   const [data, setData] = useState(criteria)
 
+  console.log(criteria, criteriax, "cokle")
 
   useEffect(() => {
     let scr = ''
     // setCriteria([])
-
+    criteriax.aspect_id = props.index + 1
     if (criteriax !== undefined) {
       switch (criteriax.score) {
         case 1:
@@ -36,6 +37,7 @@ const Rates = (props) => {
     //   alert('tes')
     //   setCriteria(criteria => [...criteria, [criteriax.aspect_id, criteriax.score, scr]])
     // }
+
     if (!props.scoring) {
       if (props.aspect !== undefined) {
         if (criteria.length <= props.aspect) {
@@ -49,7 +51,9 @@ const Rates = (props) => {
     }
     else {
       if (props.hide === false) {
-        setCriteria(criteria => [...criteria, [criteriax.aspect_id, criteriax.score, scr]])
+        console.log(n, "ini n nya")
+        setCriteria(criteria => [...criteria, [criteria.length < 0 ? 1 : criteria.length + 1, criteriax.score, scr]])
+        setN(n + 1)
       }
     }
 
@@ -136,20 +140,22 @@ const Rates = (props) => {
         className={`${!props.hide && `justify-content-center`}`}
         style={{ minWidth: `69px` }}
       >
-
+        {console.log(criteria, "legong")}
         <div className="rates">
           <div className="my-auto">
             {criteria.length < 1 ? (
               <h3>Not&nbsp;Rated</h3>
             ) : (
+              // <></>
               <h3
-                dangerouslySetInnerHTML={{ __html: criteria.length > 0 && criteria[criteriax.aspect_id - 1][2] }}
+                dangerouslySetInnerHTML={{ __html: criteria.length > 0 && criteria[criteriax.aspect_id - 1]?.[2] }}
               ></h3>
             )}
             {criteria.length < 1 ? (
               <p className="">-</p>
             ) : (
-              <p>{criteria[criteriax.aspect_id - 1][1]}</p>
+              // <p>{criteria[criteriax.aspect_id - 1][1]}</p>
+              <p>{criteria.map((val) => criteriax.aspect_id === val[0] && val[1])}</p>
             )}
           </div>
         </div>

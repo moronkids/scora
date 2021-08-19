@@ -99,8 +99,8 @@ const Buttons = props => {
       }
     });
     const datas = {
-      team: final[2],
-      phase: phase_id,
+      team: parseInt(final[3]),
+      phase: parseInt(phase_id),
       scores: data
     }
     console.log(data, "ini payloadnya");

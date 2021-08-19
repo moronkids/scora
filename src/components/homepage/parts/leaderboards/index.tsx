@@ -80,7 +80,7 @@ const Leaderboards = () => {
                 <div className="col pr-0">
                   <div className="justify-content-between d-flex">
                     <div className=" d-flex">
-                      <Link to={`/detail/team/${team[i].name}_${i}_${team[i].id}`}>
+                      <Link to={`/detail/team/${team[i].name}_${i}_${team[i].team_id}_${team[i].id}`}>
                         <div className="name-team justify-content-start w-100">
                           {team[i].name}
                         </div>

@@ -24,7 +24,9 @@ import {
     HIT_LOADING,
     DO_LOADING,
     HIT_PHASE_EVENT,
-    GET_PHASE_EVENT
+    GET_PHASE_EVENT,
+    HIT_CURRENT_PHASE_EVENT,
+    GET_CURRENT_PHASE_EVENT
 } from "redux/actions/index";
 // Import all actions
 
@@ -36,7 +38,7 @@ import {
 import {
     apiGetAspectByPhaseEvent,
     apiGetDetailTeam,
-    apiGetEvent, apiGetPhase, apiGetPhaseByEvent, apiGetTeamByPhase, apiPostFavTeam, apiPostFavTeamRemove, apiPostSubmitScore
+    apiGetEvent, apiGetPhase, apiGetPhaseByEvent, apiGetTeamByPhase, apiPostFavTeam, apiPostFavTeamRemove, apiPostSetCurrent, apiPostSubmitScore
 } from "redux/api/event";
 //Import api call
 
@@ -172,6 +174,18 @@ function* postSubmitScoreSaga({ payload }: any) {
         console.log(error)
     }
 }
+type postCurrentEvents = SagaReturnType<typeof apiPostSetCurrent>
+function* postCurrentEvent({ payload }: any) {
+    try {
+        console.log(payload, "heha")
+        const score: postCurrentEvents = yield call(apiPostSetCurrent, payload);
+        console.log(score, 'hasilnya ngab');
+        yield put({ type: GET_CURRENT_PHASE_EVENT, payload: score });
+        // yield put({ type: POST_SCORE, payload: score });
+    } catch (error) {
+        console.log(error)
+    }
+}
 function* loading({ payload }: any) {
     try {
 
@@ -198,4 +212,5 @@ export default function* scora() {
     yield takeEvery(HIT_SUBMIT_SCORE, postSubmitScoreSaga);
     yield takeEvery(RESET_DETAIL_TEAM, resetDetailTeam);
     yield takeLatest(HIT_LOADING, loading);
+    yield takeLatest(HIT_CURRENT_PHASE_EVENT, postCurrentEvent);
 }

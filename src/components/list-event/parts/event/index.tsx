@@ -24,8 +24,8 @@ const CurrentEvent = (props: { ended: any; data: any, phase: any }) => {
         </div>
         <div className="justify-content-around title-event">
           <div className="title">{data && data.display_name}</div>
-
-          <div className="stage" onClick={(e) => { setStage(!stage); setpopup([data.display_name, props.phase]) }}>
+          {console.log(data, "poop")}
+          <div className="stage" onClick={(e) => { setStage(!stage); setpopup([data.display_name, props.phase, data.id]) }}>
             {active_phase}
             <span className="pl-1">
               <img src={ArrowDown} alt="" />

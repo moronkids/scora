@@ -44,7 +44,7 @@ const Scoring = (props) => {
     dispatch({ type: HIT_ASPECT_PHASE_EVENT, payload: { event: event, phase: phase } })
     // }
     for (let index = 0; index < criteria.length; index++) {
-
+      console.log(criteria, "dope")
       if (criteria[index][2] === 'Not Rated') {
         setComplete(false);
         break
@@ -79,7 +79,7 @@ const Scoring = (props) => {
                     </div>
                     <div className="title-score">{val.caption}</div>
 
-                    <Rates scoring={team && team[final[1]].score_details.length > 0 ? true : false} aspect={aspect.length} criteria={team && team[final[1]].score_details.length > 0 ? team[final[1]].score_details[i] : scoring_null[i]} hide={false} />
+                    <Rates scoring={team && team[final[1]].score_details.length > 0 ? true : false} index={i} aspect={aspect.length} criteria={team && team[final[1]].score_details.length > 0 ? team[final[1]].score_details[i] : scoring_null[i]} hide={false} />
                   </div>
                 </>
               );

@@ -14,7 +14,8 @@ const DetailTeam = () => {
   const final = name.split('_')
   const context = useContext(Hooks)
   useEffect(() => {
-    dispatch({ type: HIT_DETAIL_TEAM, payload: final[0].replace(/\s/g, '%20') })
+    dispatch({ type: HIT_DETAIL_TEAM, payload: final[2] })
+    // dispatch({ type: HIT_DETAIL_TEAM, payload: final[0].replace(/\s/g, '%20') })
   }, [name])
   return (
     <div className="detailteam-scora">

@@ -85,7 +85,7 @@ const Index = (props: { children: boolean | React.ReactChild | React.ReactFragme
   // useEffect(() => {
 
   // }, [criteria])
-
+  const [n, setN] = useState(0);
   const valx = {
     sorting,
     setSorting,
@@ -123,7 +123,8 @@ const Index = (props: { children: boolean | React.ReactChild | React.ReactFragme
     phase_, setphase_,
     complete, setComplete,
     bgActive, setbgActive,
-    event, setEvent
+    event, setEvent,
+    n, setN
   };
   return <Hooks.Provider value={valx}>{props.children}</Hooks.Provider>;
 };
