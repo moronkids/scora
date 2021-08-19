@@ -22,11 +22,11 @@ const Scoring = (props: { aspect: any }) => {
     }
     else {
       // setCriteria(team[final[1]['score_details']])
-      let arr = []
-      let datas = team[final[1]]['score_details'].forEach((val, i) => {
-        arr[i] = [val['aspect_id'], val['score']]
-      })
-      setCriteria(arr)
+      // let arr = []
+      // let datas = team[final[1]]['score_details'].forEach((val, i) => {
+      //   arr[i] = [val['aspect_id'], val['score']]
+      // })
+      // setCriteria(arr)
     }
   }, [scoring, previewScore, team]);
 

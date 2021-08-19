@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Hooks } from "providers";
+import { useParams } from 'react-router';
 const Rates = (props) => {
+  let { name } = useParams()
+  const final = name.split('_')
   const { update_score, criteria, setCriteria, n, setN } = useContext(Hooks);
   let criteriax = props.criteria;
   const [data, setData] = useState(criteria)
 
-
+  // setCriteria()
   console.log(criteria, criteriax, "cokle")
   // console.log(props.scoring, "cokle")
   criteriax.aspect_id = props.index + 1
@@ -60,7 +63,7 @@ const Rates = (props) => {
     }
 
 
-  }, [props.scoring]);
+  }, [props.scoring, name]);
 
   return (
     <div

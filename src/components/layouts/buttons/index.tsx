@@ -55,6 +55,7 @@ const Buttons = props => {
     previewScore,
     setPreviewScore,
     criteria,
+    setCriteria,
     phase_active,
     order
   } = useContext(Hooks);
@@ -104,6 +105,7 @@ const Buttons = props => {
       phase: parseInt(phase_active_),
       scores: data
     }
+    setCriteria([])
     console.log(data, "ini payloadnya");
     await dispatch({ type: HIT_SUBMIT_SCORE, payload: datas })
     await dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] })
