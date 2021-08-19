@@ -11,7 +11,7 @@ const Login = () => {
     // );
 
     // useEffect(() => {
-    //     alert("cuk")
+
 
     // }, [auth])
     return (

@@ -68,7 +68,7 @@ const Rates = (props) => {
       ) : (
 
         <div className="justify-content-start d-flex w-100">
-          {/* {console.log(criteria, criteriax, "wedus")} */}
+
           <div
             className="star my-auto"
             style={{
@@ -80,7 +80,7 @@ const Rates = (props) => {
                   : "grayscale(100%)"
             }}
             onClick={e => update_score(criteriax.aspect_id, 1, "Fair")}
-          // onClick={e => alert('asu')}
+
           />
           <div
             className="star my-auto"

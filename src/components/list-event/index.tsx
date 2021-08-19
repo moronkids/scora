@@ -1,34 +1,43 @@
 import React, { useEffect, useState } from "react";
 import Event from 'components/list-event/parts/event'
 import { useDispatch, useSelector } from "react-redux";
-import { GET_EVENT, GET_PHASE } from "redux/actions";
+import { GET_EVENT, GET_PHASE, HIT_PHASE, HIT_PHASE_EVENT } from "redux/actions";
 import { Store } from "redux";
 const ListEvent = () => {
   const dispatch = useDispatch();
-  const { event, phase } = useSelector((state: Store) => ({
+  const { event, phase, phaseArr } = useSelector((state: Store) => ({
     event: state.event.results,
-    phase: state.event.phase
+    phase: state.event.phase,
+    phaseArr: state.event.phase_arr
   }))
+
   const [tab, setTab] = useState(1);
+  let arrPhase: never[] = [];
   useEffect(() => {
-    dispatch({ type: GET_EVENT });
-    dispatch({ type: GET_PHASE });
+    //   dispatch({ type: GET_EVENT });
+    //   //display_name
+    //   //short_name
+    //   // dispatch({ type: GET_PHASE });
+    event.forEach(async (val, i) => {
+      console.log('acitive phase', val)
+      await dispatch({ type: HIT_PHASE_EVENT, payload: [val.short_name, i] });
+    });
   }, [phase]);
   let current = [];
   let previous = [];
-  console.log(phase, event, 'active phase 0');
+  console.log(/* phase, event, */ event, arrPhase, 'active phase 0');
 
   if (current.length === 0) {
     for (let item in event) {
       if (event[item].is_active) {
-
+        console.log('culke', phaseArr)
         current.push(
-          <Event ended={false} data={event[item]} phase={phase} />
+          <Event ended={false} data={event[item]} phase={phaseArr && phaseArr[item]} />
         )
       }
       else {
         previous.push(
-          <Event ended={true} data={event[item]} phase={phase} />
+          <Event ended={true} data={event[item]} phase={phaseArr && phaseArr[item]} />
         )
       }
     }

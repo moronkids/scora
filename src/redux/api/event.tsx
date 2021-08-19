@@ -5,7 +5,7 @@ import { http } from 'helper/http';
 //endpoint GET
 const getEvent = 'event';
 const getPhase = 'phase';
-const getPhaseByEvent = 'phase?event=ukode-2021';
+const getPhaseByEvent = 'phase?event=';
 const getAspect = 'aspect';
 const getAspectByEvent = 'aspect?event=ukode-2021';
 const getAspectByPhaseEvent = 'aspect?event=dailysocial-hackathon&phase=6';
@@ -29,8 +29,16 @@ export const apiGetPhase = async (iData: any) => {
     const datas = await http.get(`${api_logged + getPhase}`, iData);
     return datas;
 }
+export const apiGetPhaseByEvent = async (iData: any) => {
+    // alert('sampe sini',)
+    console.log('sampeee', api_logged + getPhaseByEvent, iData)
+    const datas = await http.get(`${api_logged + getPhaseByEvent + iData}`);
+    console.log(datas, "heho")
+    return datas;
+}
 
 export const apiGetTeamByPhase = async (iData: any) => {
+    // const phasex = ;
     const phasex = iData && iData[0] ? iData[0] : 1;
     console.log(iData, "tesasz")
     const order = iData && iData[1] ? iData[1] : 'sequence';

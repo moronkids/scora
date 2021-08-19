@@ -17,25 +17,25 @@ const Body = props => {
     loading: state.loading.loading
   }))
   useEffect(() => {
-    if (phase) {
-      // alert('sd')
-      for (let i = 0; i < phase.length; i++) {
-        // alert('sd2')
-        console.log(phase_active, phase[i], "ckcksu");
-        if (phase[i].id === phase_active[0] || phase[i].id === phase_active) {
-          // alert(',s')
-          setphase_(phase[i].name)
-          setphase(phase[i].id)
-          break;
-        }
-        else if (phase[i].is_active) {
-          // alert(',s')
-          setphase_(phase[i].name)
-          setphase(phase[i].id)
-          break;
-        }
-      }
-    }
+    // if (phase) {
+    //   // alert('sd')
+    //   for (let i = 0; i < phase.length; i++) {
+    //     // alert('sd2')
+    //     console.log(phase_active, phase[i], "ckcksu");
+    //     if (phase[i].id === phase_active[0] || phase[i].id === phase_active) {
+    //       // alert(',s')
+    //       setphase_(phase[i].name)
+    //       setphase(phase[i].id)
+    //       break;
+    //     }
+    //     else if (phase[i].is_active) {
+    //       // alert(',s')
+    //       setphase_(phase[i].name)
+    //       setphase(phase[i].id)
+    //       break;
+    //     }
+    //   }
+    // }
   }, [phase, phase_])
   return (
     <>

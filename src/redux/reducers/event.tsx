@@ -1,21 +1,24 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_ASPECT_PHASE_EVENT, GET_DETAIL_TEAM, GET_EVENT, GET_PHASE, GET_TEAM, POST_FAV, POST_SUBMIT_SCORE } from 'redux/actions'
+import { GET_ASPECT_PHASE_EVENT, GET_DETAIL_TEAM, GET_EVENT, GET_PHASE, GET_PHASE_EVENT, GET_TEAM, POST_FAV, POST_SUBMIT_SCORE } from 'redux/actions'
 
 // Define your state here
 const initialState = {
 
     results: [],
     phase: null,
+    phase_arr: [],
     team: null,
     detail_team: [],
     aspect: [],
-    fav: 'reset'
+    fav: 'reset',
+    event_active: null,
+    phase_active: null,
 
 
 };
 // This export default will control your state for your application
 export default (state = initialState, { type, payload }: any) => {
-    // console.log(payload, 'hasilnya ngab');
+    console.log(payload, 'hasilnya ngab');
     switch (type) {
         case GET_EVENT: {
 
@@ -30,6 +33,20 @@ export default (state = initialState, { type, payload }: any) => {
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             state['phase'] = payload.data.results;
+            return {
+                ...state,
+            };
+        }
+        case GET_PHASE_EVENT: {
+            if (payload[0] === undefined) return { ...state }
+            if (payload[0].status !== 200) return { ...state };
+
+            // let phase_arr = state['phase_arr'].length
+            console.log(payload, "ndanku")
+
+
+            state['phase_arr'][payload[1]] = payload[0].data.results
+
             return {
                 ...state,
             };

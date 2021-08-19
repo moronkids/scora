@@ -80,6 +80,7 @@ const Index = (props: { children: boolean | React.ReactChild | React.ReactFragme
   //favorite
   //phase
   const [phase_active, setphase] = useState(Number);
+  const [event, setEvent] = useState('default')
   //phase
   // useEffect(() => {
 
@@ -121,7 +122,8 @@ const Index = (props: { children: boolean | React.ReactChild | React.ReactFragme
     currentPhase, setCurrentPhase,
     phase_, setphase_,
     complete, setComplete,
-    bgActive, setbgActive
+    bgActive, setbgActive,
+    event, setEvent
   };
   return <Hooks.Provider value={valx}>{props.children}</Hooks.Provider>;
 };

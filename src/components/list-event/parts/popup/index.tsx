@@ -9,7 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 import close_popup from 'assets/img/icons/Icon Close.svg'
 const PopUp = props => {
   const location = useLocation();
-  const { stage, setStage, popup, setProfile, setphase, phase_active, setphase_ } = useContext(Hooks);
+  const { stage, setStage, popup, setProfile, setphase, phase_active, setphase_, setEvent } = useContext(Hooks);
   const { event, phase } = useSelector((state: Store) => ({
     event: state.event.results,
     phase: state.event.phase
@@ -19,11 +19,12 @@ const PopUp = props => {
     setProfile(false)
   }, [location.pathname])
   const phasex = [];
+  console.log(popup, "cheki")
   for (let x in popup[1]) {
     phasex.push(
       <div className="align-content-start flex-wrap pb-2" >
         <Link to="/">
-          <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setStage(false) }}>
+          <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false) }}>
             <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div>
           </div></Link>
       </div>

@@ -6,11 +6,14 @@ const CurrentEvent = (props: { ended: any; data: any, phase: any }) => {
 
   const data = props.data;
   let active_phase = '';
+
   for (let x in props.phase) {
     if (props.phase[x].is_active) {
+      // alert(props.phase[x].name)
       active_phase = props.phase[x].name
     }
   }
+
   return (
     <div className="current-event">
       <div className="current-event__box d-flex flex-wrap">
@@ -21,6 +24,7 @@ const CurrentEvent = (props: { ended: any; data: any, phase: any }) => {
         </div>
         <div className="justify-content-around title-event">
           <div className="title">{data && data.display_name}</div>
+
           <div className="stage" onClick={(e) => { setStage(!stage); setpopup([data.display_name, props.phase]) }}>
             {active_phase}
             <span className="pl-1">

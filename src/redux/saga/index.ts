@@ -22,7 +22,9 @@ import {
     POST_SUBMIT_SCORE,
     RESET_DETAIL_TEAM,
     HIT_LOADING,
-    DO_LOADING
+    DO_LOADING,
+    HIT_PHASE_EVENT,
+    GET_PHASE_EVENT
 } from "redux/actions/index";
 // Import all actions
 
@@ -34,7 +36,7 @@ import {
 import {
     apiGetAspectByPhaseEvent,
     apiGetDetailTeam,
-    apiGetEvent, apiGetPhase, apiGetTeamByPhase, apiPostFavTeam, apiPostFavTeamRemove, apiPostSubmitScore
+    apiGetEvent, apiGetPhase, apiGetPhaseByEvent, apiGetTeamByPhase, apiPostFavTeam, apiPostFavTeamRemove, apiPostSubmitScore
 } from "redux/api/event";
 //Import api call
 
@@ -62,11 +64,26 @@ function* getEvent({ payload }: any) {
 
 type GetPhase = SagaReturnType<typeof apiGetPhase>
 function* getPhase({ payload }: any) {
+    console.log(payload, 'active phase 0')
     try {
         const event: GetPhase = yield call(apiGetPhase, payload);
         yield put({ type: GET_PHASE, payload: event });
     } catch (error) {
         console.log(error)
+    }
+}
+type getPhaseByEvent = SagaReturnType<typeof apiGetPhaseByEvent>
+// eslint-disable-next-line @typescript-eslint/no-redeclare
+function* getPhaseByEvent({ payload }: any) {
+    // alert('masuk')
+    try {
+        // alert('sini')
+        const event: getPhaseByEvent = yield call(apiGetPhaseByEvent, payload[0]);
+        console.log(event, "denjori")
+        yield put({ type: GET_PHASE_EVENT, payload: [event, payload[1]] });
+    } catch (error) {
+        alert('error nih')
+        console.log(error, 'error nih')
     }
 }
 
@@ -168,6 +185,7 @@ export default function* scora() {
     yield takeEvery(HIT_LOGIN, postLogin);
     yield takeEvery(HIT_EVENT, getEvent);
     yield takeEvery(HIT_PHASE, getPhase);
+    yield takeEvery(HIT_PHASE_EVENT, getPhaseByEvent);
     yield takeEvery(HIT_TEAM, getTeam);
     yield takeEvery(HIT_FAV, postFav);
     yield takeEvery(HIT_FAV_REMOVE, postFavRemove);
