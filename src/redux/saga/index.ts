@@ -130,6 +130,8 @@ function* postFav({ payload }: any) {
         yield put({ type: POST_FAV, payload: team });
         yield put({ type: DO_LOADING, payload: false });
     } catch (error) {
+        yield put({ type: POST_FAV, payload: 'failed' });
+        yield put({ type: DO_LOADING, payload: false });
         console.log(error)
     }
 }
@@ -153,6 +155,8 @@ function* postFavRemove({ payload }: any) {
         yield put({ type: POST_FAV, payload: team });
         yield put({ type: DO_LOADING, payload: false });
     } catch (error) {
+        yield put({ type: POST_FAV, payload: 'failed' });
+        yield put({ type: DO_LOADING, payload: false });
         console.log(error)
     }
 }
