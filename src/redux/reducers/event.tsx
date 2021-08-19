@@ -31,7 +31,7 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case GET_EVENT: {
-
+            console.log('laknat', payload)
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             state['results'] = payload.data.results;
@@ -60,9 +60,10 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case GET_TEAM: {
-            if (payload === undefined) return { ...state }
-            if (payload.status !== 200) return { ...state };
-            state['team'] = payload.data.results;
+            if (payload[0] === undefined) return { ...state }
+            if (payload[0].status !== 200) return { ...state };
+            state['team'] = payload[0].data.results;
+            state['phase_active'] = payload[1];
             return {
                 ...state,
             };

@@ -14,10 +14,10 @@ const ListEvent = () => {
   const [tab, setTab] = useState(1);
   let arrPhase: never[] = [];
   useEffect(() => {
-    //   dispatch({ type: GET_EVENT });
-    //   //display_name
-    //   //short_name
-    //   // dispatch({ type: GET_PHASE });
+    dispatch({ type: GET_EVENT });
+    //display_name
+    //short_name
+    // dispatch({ type: GET_PHASE });
     event.forEach(async (val, i) => {
       console.log('acitive phase', val)
       await dispatch({ type: HIT_PHASE_EVENT, payload: [val.short_name, i] });

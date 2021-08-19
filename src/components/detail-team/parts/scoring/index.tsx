@@ -23,9 +23,9 @@ const Scoring = (props: { aspect: any }) => {
       {/* {console.log(score_team, "panji")} */}
       {(scoring && previewScore) || !scoring ? <>
         <div className="ur_score d-md-none d-block my-auto">
-          Yours: <br />
+          Yoursx: <br />
           {/* <span className="mx-auto">{finalScore === 0 ? team?.[final[1]].grandtotal : finalScore}</span> */}
-          <span className="mx-auto">{score_team?.score || team?.[final[1]].grandtotal}</span>
+          <span className="mx-auto">{score_team?.score || team?.[final[1]].total}</span>
         </div></> : ''}
       <div className={`my-auto ${(scoring && !previewScore) && 'w-100'}`}>
         {scoring && previewScore && complete ? <ButtonScoring

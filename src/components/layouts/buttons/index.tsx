@@ -42,9 +42,10 @@ const Buttons = props => {
 
     final = name.split('_')
   }
-  const { phase, team } = useSelector((state: Store) => ({
+  const { phase, team, phase_active_ } = useSelector((state: Store) => ({
     phase: state.event.phase,
-    team: state.event.detail_team
+    team: state.event.detail_team,
+    phase_active_: state.event.phase_active
   }))
   const {
     sorting,
@@ -100,7 +101,7 @@ const Buttons = props => {
     });
     const datas = {
       team: parseInt(final[3]),
-      phase: parseInt(phase_id),
+      phase: parseInt(phase_active_),
       scores: data
     }
     console.log(data, "ini payloadnya");

@@ -23,7 +23,7 @@ const eventPersistConfig = {
 };
 
 const appReducer = combineReducers({
-    event: event,
+    event: persistReducer(eventPersistConfig, event),
     loading: loading,
     auth: persistReducer(authPersistConfig, auth)
 });

@@ -19,7 +19,9 @@ const Leaderboards = () => {
     team: state.event.team,
     length_team: state.event.detail_team.length
   }))
+  useEffect(() => {
 
+  }, [team])
   return (
     <div className="container">
       <div className="help-center btn-back-detail_team">
@@ -58,7 +60,7 @@ const Leaderboards = () => {
             <div className="ur_score d-md-block d-none justify-content-end my-auto">
               {/* Your&nbsp;Score: <br /> */}
               Yours: <br />
-              <span className="mx-auto">{team?.[final[1]].grandtotal}</span>
+              <span className="mx-auto">{team?.[final[1]].total}</span>
             </div>
             <div className="justify-content-center my-auto d-none d-md-block">
               <ButtonScoring
