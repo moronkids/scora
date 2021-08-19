@@ -7,7 +7,7 @@ import { useParams } from 'react-router';
 const Scoring = (props: { aspect: any }) => {
   let { name } = useParams()
   const final = name.split('_')
-  const { scoring, setScoring, finalScore, setFinalScore, setPreviewScore, previewScore, complete, setComplete } = useContext(Hooks)
+  const { scoring, setScoring, finalScore, setFinalScore, setPreviewScore, previewScore, complete, setComplete, setCriteria } = useContext(Hooks)
   const { datax, aspect, team, score_team } = useSelector((state: Store) => ({
     datax: state.event.results,
     aspect: state.event.aspect,
@@ -16,7 +16,19 @@ const Scoring = (props: { aspect: any }) => {
   }));
 
   useEffect(() => {
-  }, [scoring, previewScore]);
+    if (team[final[1]['total'] == 0]) {
+      // alert('masuk')
+      setCriteria([])
+    }
+    else {
+      // setCriteria(team[final[1]['score_details']])
+      let arr = []
+      let datas = team[final[1]]['score_details'].forEach((val, i) => {
+        arr[i] = [val['aspect_id'], val['score']]
+      })
+      setCriteria(arr)
+    }
+  }, [scoring, previewScore, team]);
 
   return (
     <div className="scoring-scora fixed-bottom d-md-none d-flex justify-content-between px-3 " style={{ columnCount: scoring ? '1' : '2' }}>

@@ -42,10 +42,10 @@ export const apiGetPhaseByEvent = async (iData: any) => {
 export const apiGetTeamByPhase = async (iData: any) => {
     // const phasex = ;
     const phasex = iData && iData[0] ? iData[0] : 1;
-    console.log(iData, "tesasz")
+
     const order = iData && iData[1] ? iData[1] : 'sequence';
     const datas = await http.get(`${api_logged + getTeamByPhase + phasex + `&order=` + order}`);
-    console.log('hasilnya', datas);
+
 
     return datas;
 }

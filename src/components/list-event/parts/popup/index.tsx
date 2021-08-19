@@ -27,7 +27,7 @@ const PopUp = props => {
     dispatch({ type: HIT_CURRENT_PHASE_EVENT, payload: data })
   }
   const phasex = [];
-  console.log(popup, "cheki")
+
   for (let x in popup[1]) {
     phasex.push(
       <div className="align-content-start flex-wrap pb-2" >
@@ -38,7 +38,7 @@ const PopUp = props => {
       </div>
     )
   }
-  console.log(phase_active, "tesas")
+
   return (
     <div className="scora-event">
       <div className={`contact-us ${stage ? `d-flex` : `d-none`}`}>

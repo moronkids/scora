@@ -18,7 +18,7 @@ const initialState = {
 };
 // This export default will control your state for your application
 export default (state = initialState, { type, payload }: any) => {
-    console.log(payload, 'hasilnya ngab');
+    // console.log(payload, 'hasilnya ngab');
     switch (type) {
 
         case GET_CURRENT_PHASE_EVENT: {
@@ -31,7 +31,7 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case GET_EVENT: {
-            console.log('laknat', payload)
+
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             state['results'] = payload.data.results;
@@ -85,7 +85,7 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case POST_SUBMIT_SCORE: {
-            console.log(payload, 'hasilnya ngab')
+
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             // state['detail_team'] = payload.data.results;

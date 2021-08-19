@@ -141,7 +141,7 @@ const Leaderboards = () => {
             ></div>
           </div>
         </div>
-        {console.log(temp_data, data.length, "zloading")}
+
         {
           loading ? <Placeholder /> : data.length > 0 ? data : <p className="text-center">No data available</p>
         }

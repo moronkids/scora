@@ -66,7 +66,7 @@ function* getEvent({ payload }: any) {
 
 type GetPhase = SagaReturnType<typeof apiGetPhase>
 function* getPhase({ payload }: any) {
-    console.log(payload, 'active phase 0')
+
     try {
         const event: GetPhase = yield call(apiGetPhase, payload);
         yield put({ type: GET_PHASE, payload: event });
@@ -166,7 +166,7 @@ type postSubmitScoreSagas = SagaReturnType<typeof apiPostSubmitScore>
 function* postSubmitScoreSaga({ payload }: any) {
     try {
         const score: postSubmitScoreSagas = yield call(apiPostSubmitScore, payload);
-        console.log(score, 'hasilnya ngab');
+
         yield put({ type: POST_SUBMIT_SCORE, payload: score });
 
         // yield put({ type: POST_SCORE, payload: score });
@@ -179,8 +179,8 @@ function* postCurrentEvent({ payload }: any) {
     try {
         console.log(payload, "heha")
         const score: postCurrentEvents = yield call(apiPostSetCurrent, payload);
-        console.log(score, 'hasilnya ngab');
-        yield put({ type: GET_CURRENT_PHASE_EVENT, payload: score });
+
+
         // yield put({ type: POST_SCORE, payload: score });
     } catch (error) {
         console.log(error)

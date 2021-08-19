@@ -44,7 +44,7 @@ const Preview = props => {
     setFinal(data);
     setFinalScore(data);
 
-  }, [previewScore]);
+  }, [previewScore, team]);
   // console.log(finalScore, criteria, aspect, "score akhir")
   return (
     <div
@@ -87,7 +87,7 @@ const Preview = props => {
                       <div className="title">{val.caption}</div>
                     </div>
                     {/* <Rates criteria={team[finalx[1]].score_details[i]} hide={true} count={false} /> */}
-                    <Rates scoring={team && team[finalx[1]].score_details.length > 0 ? true : false} aspect={aspect.length} criteria={team && team[finalx[1]].score_details.length > 0 ? team[finalx[1]].score_details[i] : scoring_null[i]} hide={true} />
+                    <Rates scoring={team && team[finalx[1]].score_details.length > 0 ? true : false} index={i} aspect={aspect.length} criteria={team && team[finalx[1]].score_details.length > 0 ? team[finalx[1]].score_details[i] : scoring_null[i]} hide={true} />
                   </div>
                 </>
               );

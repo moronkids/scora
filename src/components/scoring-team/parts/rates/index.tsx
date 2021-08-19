@@ -5,12 +5,13 @@ const Rates = (props) => {
   let criteriax = props.criteria;
   const [data, setData] = useState(criteria)
 
-  console.log(criteria, criteriax, "cokle")
 
+  console.log(criteria, criteriax, "cokle")
+  // console.log(props.scoring, "cokle")
+  criteriax.aspect_id = props.index + 1
   useEffect(() => {
     let scr = ''
     // setCriteria([])
-    criteriax.aspect_id = props.index + 1
     if (criteriax !== undefined) {
       switch (criteriax.score) {
         case 1:
@@ -50,16 +51,16 @@ const Rates = (props) => {
       }
     }
     else {
+      console.log('cokle', props.hide)
       if (props.hide === false) {
-        console.log(n, "ini n nya")
+        console.log(n, "cokle")
         setCriteria(criteria => [...criteria, [criteria.length < 0 ? 1 : criteria.length + 1, criteriax.score, scr]])
         setN(n + 1)
       }
     }
 
-    if (props.scoring) {
-    }
-  }, []);
+
+  }, [props.scoring]);
 
   return (
     <div
@@ -140,7 +141,7 @@ const Rates = (props) => {
         className={`${!props.hide && `justify-content-center`}`}
         style={{ minWidth: `69px` }}
       >
-        {console.log(criteria, "legong")}
+
         <div className="rates">
           <div className="my-auto">
             {criteria.length < 1 ? (

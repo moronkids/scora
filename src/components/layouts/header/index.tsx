@@ -68,8 +68,8 @@ const Header = (props: { ishelp: any; headers: string; }) => {
         // backgroundImage: event && location.pathname === '/list-event ' ? '' : `url(${event && event.banner})`
       }}
     >
-      {console.log(event, "sdsd")
-      }
+
+
       <img
         src={Waves}
         className={`header-scora__wave1 d-none ${location.pathname === '/list-event' ? 'd-none' : 'd-sm-block'}
@@ -134,7 +134,7 @@ const Header = (props: { ishelp: any; headers: string; }) => {
               <div className="header-scora__desc">
                 <h3>{event}</h3>
                 {/* <h3>{event && event.display_name}</h3> */}
-                {console.log(phase_, phase_active, "heyho")}
+
 
                 {/* <p>{phase_active}</p> */}
                 <p>{phase_}</p>

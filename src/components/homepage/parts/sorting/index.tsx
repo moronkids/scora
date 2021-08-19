@@ -6,7 +6,7 @@ const Sorting = () => {
   const dispatch = useDispatch();
   const { sorting, setSorting, setorder, order, update_team, phase_active, currentPhase, setCurrentPhase, setbgActive } = useContext(Hooks);
   useEffect(() => {
-    console.log(phase_active, 'tesasxxx');
+
     dispatch({ type: HIT_LOADING, payload: true })
     dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] })
   }, [order])

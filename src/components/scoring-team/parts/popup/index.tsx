@@ -21,11 +21,11 @@ const Index = () => {
     }
     useEffect(() => {
         setNext(false)
-        console.log(updated, 'cekiceki');
+
 
         setSubmitted(false)
         if (updated !== null && updated !== undefined) {
-            console.log(updated, "cekicekio")
+
             setSubmitted(true)
             if (list_team[parseInt(final[1]) + 1]) {
                 // alert('masj')
@@ -36,7 +36,7 @@ const Index = () => {
         setScoring(false)
     }, [updated])
 
-    console.log(submitted, updated, next, "cekiceki")
+
     return (
         <div className={`success_popup ${submitted ? 'd-block' : 'd-none'}`} >
             <div className="success_popup__overlay position-fixed" />
@@ -48,7 +48,7 @@ const Index = () => {
                         <p>Your score for Powerbrain has been submitted</p>
                     </div>
                     <div className="action d-flex">
-                        <Link to={next && `/detail/team/${list_team[parseInt(final[1]) + 1]?.name.replace(' ', '%20')}_${parseInt(final[1]) + 1}_${list_team[parseInt(final[1]) + 1]?.team_id}`}>
+                        <Link to={next && `/detail/team/${list_team[parseInt(final[1]) + 1]?.name.replace(' ', '%20')}_${parseInt(final[1]) + 1}_${list_team[parseInt(final[1]) + 1]?.team_id}_${list_team[parseInt(final[1]) + 1]?.id}`}>
                             {/* <Link to="/"> */}
                             <div className="next-team">
                                 <Button name="Next Team"
