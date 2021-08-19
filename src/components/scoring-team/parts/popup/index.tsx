@@ -48,7 +48,7 @@ const Index = () => {
                         <p>Your score for Powerbrain has been submitted</p>
                     </div>
                     <div className="action d-flex">
-                        <Link to={next && `/detail/team/${list_team[parseInt(final[1]) + 1]?.name.replace(' ', '%20')}_${parseInt(final[1]) + 1}_${list_team[parseInt(final[1]) + 1]?.id}`}>
+                        <Link to={next && `/detail/team/${list_team[parseInt(final[1]) + 1]?.name.replace(' ', '%20')}_${parseInt(final[1]) + 1}_${list_team[parseInt(final[1]) + 1]?.team_id}`}>
                             {/* <Link to="/"> */}
                             <div className="next-team">
                                 <Button name="Next Team"
