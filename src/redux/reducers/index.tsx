@@ -19,7 +19,7 @@ const authPersistConfig = {
 const eventPersistConfig = {
     key: "event",
     storage: storage,
-    whitelist: ['team', 'detail_team']
+    whitelist: ['team', 'detail_team', 'phase_active']
 };
 
 const appReducer = combineReducers({
@@ -32,6 +32,7 @@ const rootReducer = (state: any, action: any) => {
         localStorage.removeItem("token");
         localStorage.removeItem("persist:root");
         localStorage.removeItem("persist:auth");
+        // localStorage.removeItem("persist:event");
         state = undefined;
     }
 

@@ -12,7 +12,7 @@ const initialState = {
     aspect: [],
     fav: 'reset',
     event_active: null,
-    phase_active: null,
+    phase_active: [],
 
 
 };
@@ -65,7 +65,22 @@ export default (state = initialState, { type, payload }: any) => {
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             state['phase'] = payload.data.results;
-            state['phase_active'] = [payload.data.results[0].id, payload.data.results[0].name];
+            console.log('pehung', state['phase_active'])
+            if (state['phase_active'].length <= 0) {
+                // state['phase_active'] = [payload.data.results[0].id, payload.data.results[0].name]
+                let data = null
+                payload.data.results.map((val, i) => {
+                    return Object.keys(val).find((key) => {
+                        console.log(val['is_active'], val, "cespleng")
+                        if (val['is_active'] === true) {
+                            console.log(val['name'], "masuok")
+                            data = [val['id'], val['name']]
+                        }
+                    });
+                })
+                state['phase_active'] = data
+            }
+
             // console.log(state, "sdsd");
             // alert('masuk')
             return {

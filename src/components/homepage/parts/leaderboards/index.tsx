@@ -15,11 +15,12 @@ toast.configure();
 const Leaderboards = () => {
   const dispatch = useDispatch();
   const { setSubmitted, sorting, setSorting, orderDisplay, setCriteria, setorderDisplay, favorite, setfavorite, phase_active } = useContext(Hooks);
-  const { team, detail_team, loading, fav } = useSelector((state: Store) => ({
+  const { team, detail_team, loading, fav, active_phase } = useSelector((state: Store) => ({
     team: state.event.team,
     loading: state.loading.loading,
     detail_team: state.event.detail_team,
-    fav: state.event.fav
+    fav: state.event.fav,
+    active_phase: state.event.phase_active
   }));
   let data: {} | null | undefined = [];
   const temp_data: {} | null | undefined = [];
@@ -47,7 +48,7 @@ const Leaderboards = () => {
   }, [favorite, detail_team, team, fav]);
   const setfavoritex = async (a) => {
     for (let i in team) {
-
+      a[1] = active_phase[0]
       if (team[i].id === a[0]) {
         if (a[2]) {
           if (team[i].is_favorite) {
