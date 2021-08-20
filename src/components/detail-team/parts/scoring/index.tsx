@@ -16,7 +16,8 @@ const Scoring = (props: { aspect: any }) => {
   }));
 
   useEffect(() => {
-    if (team[final[1]['total'] == 0]) {
+    console.log(final, team, "kelo")
+    if (team?.[final[1]['total'] == 0]) {
       // alert('masuk')
       setCriteria([])
     }

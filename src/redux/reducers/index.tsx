@@ -19,7 +19,7 @@ const authPersistConfig = {
 const eventPersistConfig = {
     key: "event",
     storage: storage,
-    whitelist: ['detail_team']
+    whitelist: ['team', 'detail_team']
 };
 
 const appReducer = combineReducers({
