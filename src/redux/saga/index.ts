@@ -178,10 +178,10 @@ type postCurrentEvents = SagaReturnType<typeof apiPostSetCurrent>
 function* postCurrentEvent({ payload }: any) {
     try {
         console.log(payload, "heha")
-        const score: postCurrentEvents = yield call(apiPostSetCurrent, payload);
+        const score: postCurrentEvents = yield call(apiPostSetCurrent, { event: payload.phase });
 
 
-        // yield put({ type: POST_SCORE, payload: score });
+        yield put({ type: GET_CURRENT_PHASE_EVENT, payload: payload });
     } catch (error) {
         console.log(error)
     }

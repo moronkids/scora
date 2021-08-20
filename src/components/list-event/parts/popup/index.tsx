@@ -21,18 +21,26 @@ const PopUp = props => {
     setProfile(false)
   }, [location.pathname])
   const changePhase = (payload) => {
+    // const data = {
+    //   event: payload
+    // }
+    // dispatch({ type: HIT_CURRENT_PHASE_EVENT, payload: data })
+  }
+  const phasex = [];
+  const activePhaseEvent = (event, phase, id) => {
     const data = {
-      event: payload
+      event: event,
+      phase: phase,
+      id: id
     }
     dispatch({ type: HIT_CURRENT_PHASE_EVENT, payload: data })
   }
-  const phasex = [];
-
   for (let x in popup[1]) {
+    console.log(popup, "hello")
     phasex.push(
       <div className="align-content-start flex-wrap pb-2" >
         <Link to="/">
-          <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); }}>
+          <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); activePhaseEvent(popup[0], popup[2], [popup[1][x].id, popup[1][x].name]) }}>
             <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div>
           </div></Link>
       </div>

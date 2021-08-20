@@ -23,9 +23,19 @@ export default (state = initialState, { type, payload }: any) => {
 
         case GET_CURRENT_PHASE_EVENT: {
 
-            // if (payload === undefined) return { ...state }
-            // if (payload.status !== 200) return { ...state };
-            // state['results'] = payload.data.results;
+            let data = null
+            state['results'].map((val, i) => {
+                return Object.keys(val).find((key) => {
+                    console.log(val['is_current'], "SDfds")
+                    if (val['id'] === payload.event) {
+                        console.log(val['display_name'], "masuok")
+                        data = val['display_name']
+                    }
+                });
+            })
+            // console.log(data, "sdsd")
+            state['event_active'] = data
+            state['phase_active'] = payload.id
             return {
                 ...state,
             };
@@ -35,6 +45,18 @@ export default (state = initialState, { type, payload }: any) => {
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             state['results'] = payload.data.results;
+            let data = null
+            payload.data.results.map((val, i) => {
+                return Object.keys(val).find((key) => {
+                    console.log(val['is_current'], "SDfds")
+                    if (val['is_current'] === true) {
+                        console.log(val['display_name'], "masuok")
+                        data = val['display_name']
+                    }
+                });
+            })
+            // console.log(data, "sdsd")
+            state['event_active'] = data
             return {
                 ...state,
             };
@@ -43,6 +65,9 @@ export default (state = initialState, { type, payload }: any) => {
             if (payload === undefined) return { ...state }
             if (payload.status !== 200) return { ...state };
             state['phase'] = payload.data.results;
+            state['phase_active'] = [payload.data.results[0].id, payload.data.results[0].name];
+            // console.log(state, "sdsd");
+            // alert('masuk')
             return {
                 ...state,
             };
@@ -63,7 +88,8 @@ export default (state = initialState, { type, payload }: any) => {
             if (payload[0] === undefined) return { ...state }
             if (payload[0].status !== 200) return { ...state };
             state['team'] = payload[0].data.results;
-            state['phase_active'] = payload[1];
+
+            // state['phase_active'] = payload[1];
             return {
                 ...state,
             };

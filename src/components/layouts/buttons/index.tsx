@@ -106,9 +106,10 @@ const Buttons = props => {
       scores: data
     }
     setCriteria([])
-    console.log(data, "ini payloadnya");
+    console.log(phase_active_, "ini payloadnya");
     await dispatch({ type: HIT_SUBMIT_SCORE, payload: datas })
-    await dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] })
+    await dispatch({ type: HIT_TEAM, payload: [phase_active_[0], null] })
+    // await dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] })
   }
   return (
     <div className="buttom-comp " style={{ width: props.width }}>

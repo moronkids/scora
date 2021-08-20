@@ -1,15 +1,22 @@
 import React, { useContext, useEffect } from "react";
 import { Hooks } from "providers/index";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { DO_LOADING, HIT_LOADING, HIT_TEAM } from "redux/actions";
+import { Store } from "redux";
 const Sorting = () => {
   const dispatch = useDispatch();
+  const { phase, team, phase_active_ } = useSelector((state: Store) => ({
+    phase: state.event.phase,
+    team: state.event.detail_team,
+    phase_active_: state.event.phase_active
+  }))
   const { sorting, setSorting, setorder, order, update_team, phase_active, currentPhase, setCurrentPhase, setbgActive } = useContext(Hooks);
-  useEffect(() => {
+  useEffect(async () => {
 
     dispatch({ type: HIT_LOADING, payload: true })
-    dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] })
-  }, [order])
+    // dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] });
+    await dispatch({ type: HIT_TEAM, payload: [phase_active_?.[0], null] })
+  }, [order, phase_active_])
   return (
     <>
       <ul

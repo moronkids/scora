@@ -16,10 +16,12 @@ const Header = (props: { ishelp: any; headers: string; }) => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  const { phase, team } = useSelector((state: Store) => ({
+  const { phase, team, active_phase, active_event } = useSelector((state: Store) => ({
     // event: state.event.results[0],
     phase: state.event.phase,
-    team: state.event.team
+    team: state.event.team,
+    active_phase: state.event.phase_active,
+    active_event: state.event.event_active,
   }))
   const { profile, setProfile, phase_active, setphase, phase_, setphase_, event } = useContext(Hooks);
   const isHelp = props.ishelp;
@@ -132,12 +134,12 @@ const Header = (props: { ishelp: any; headers: string; }) => {
                 <p className="m-auto">{char}</p>
               </div>
               <div className="header-scora__desc">
-                <h3>{event}</h3>
+                <h3>{active_event || event}</h3>
                 {/* <h3>{event && event.display_name}</h3> */}
 
 
                 {/* <p>{phase_active}</p> */}
-                <p>{phase_}</p>
+                <p>{active_phase?.[1] || phase_}</p>
               </div>
             </div>
           </div>
