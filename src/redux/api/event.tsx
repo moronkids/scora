@@ -47,7 +47,7 @@ export const apiGetTeamByPhase = async (iData: any) => {
 
     const order = iData && iData[1] ? iData[1] : 'sequence';
     const datas = await http.get(`${api_logged + getTeamByPhase + phasex + `&order=` + order}`);
-
+    console.log('sempat', datas, Date.now())
 
     return datas;
 }

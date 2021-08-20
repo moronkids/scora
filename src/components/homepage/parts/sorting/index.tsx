@@ -11,11 +11,14 @@ const Sorting = () => {
     phase_active_: state.event.phase_active
   }))
   const { sorting, setSorting, setorder, order, update_team, phase_active, currentPhase, setCurrentPhase, setbgActive } = useContext(Hooks);
-  useEffect(async () => {
+  useEffect(() => {
 
-    dispatch({ type: HIT_LOADING, payload: true })
+    // dispatch({ type: HIT_LOADING, payload: true })
     // dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] });
-    await dispatch({ type: HIT_TEAM, payload: [phase_active_?.[0], null] })
+    console.log('sempat', phase_active_)
+    if (phase_active_.length > 0) {
+      dispatch({ type: HIT_TEAM, payload: [phase_active_?.[0], null] })
+    }
   }, [order, phase_active_])
   return (
     <>
