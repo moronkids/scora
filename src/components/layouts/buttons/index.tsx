@@ -17,7 +17,7 @@ const Button = styled.button`
     outline: 0;
   }
   @media (min-width: 768px) {
-      &:hover {
+      &:hover, &:active {
         background: #003c3d;
       }
   }

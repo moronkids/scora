@@ -11,17 +11,18 @@ import { useParams } from "react-router";
 import ButtonBack from 'components/help/parts/menu/button-back'
 import { Link } from "react-router-dom";
 const Leaderboards = () => {
+  // get query string
   let { name } = useParams()
   const final = name.split('_')
-  const { finalScore, setFinalScore, next, setNext, submitted, setSubmitted } = useContext(Hooks);
+  // const { finalScore, setFinalScore, next, setNext, submitted, setSubmitted } = useContext(Hooks);
+
+  // get glob state from redux store
   const { detail_team, team, length_team } = useSelector((state: Store) => ({
     detail_team: state.event.detail_team,
     team: state.event.team,
     length_team: state.event.detail_team.length
   }))
-  useEffect(() => {
 
-  }, [team])
   return (
     <div className="container">
       <div className="help-center btn-back-detail_team">

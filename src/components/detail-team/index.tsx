@@ -9,13 +9,14 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 const DetailTeam = () => {
+  // get query string
   let { name } = useParams()
   const dispatch = useDispatch()
   const final = name.split('_')
-  const context = useContext(Hooks)
+  // get query string
   useEffect(() => {
+    //fetch detail team when variable name is changed
     dispatch({ type: HIT_DETAIL_TEAM, payload: final[2] })
-    // dispatch({ type: HIT_DETAIL_TEAM, payload: final[0].replace(/\s/g, '%20') })
   }, [name])
   return (
     <div className="detailteam-scora">

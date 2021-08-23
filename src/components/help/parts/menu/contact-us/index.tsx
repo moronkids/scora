@@ -15,10 +15,12 @@ const PopUp = props => {
 
       <div className="contact-us__popup my-auto mx-sm-auto mx-3">
         <div className="box">
+          <div className="w-100 d-flex justify-content-end">
+            <img src={close_popup} alt="" style={{ cursor: 'pointer' }} onClick={e => setContactUs(!contactUs)} />
+          </div>
           <div className="d-flex justify-content-between pb-2">
             <h3>Contact Us</h3>
             {/* <span> */}
-            <img src={close_popup} alt="" style={{ cursor: 'pointer' }} onClick={e => setContactUs(!contactUs)} />
             {/* </span> */}
           </div>
           <div className="box-inside">

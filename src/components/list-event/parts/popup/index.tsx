@@ -39,10 +39,17 @@ const PopUp = props => {
     console.log(popup, "hello")
     phasex.push(
       <div className="align-content-start flex-wrap pb-2" >
-        <Link to="/">
-          <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); activePhaseEvent(popup[0], popup[2], [popup[1][x].id, popup[1][x].name]) }}>
-            <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div>
-          </div></Link>
+        {
+          popup[1][x].is_active ? <Link to="/">
+            <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); activePhaseEvent(popup[0], popup[2], [popup[1][x].id, popup[1][x].name]) }}>
+              <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div>
+              {/* <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div> */}
+            </div></Link> :
+            <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); activePhaseEvent(popup[0], popup[2], [popup[1][x].id, popup[1][x].name]) }}>
+              <div className={`title-stage ${!popup[1][x].is_active && `nonactive`}`}>{popup[1][x].name}</div>
+            </div>
+        }
+
       </div>
     )
   }
@@ -57,10 +64,12 @@ const PopUp = props => {
 
         <div className="contact-us__popup my-auto mx-sm-auto mx-3">
           <div className="box">
+            <div className="w-100 d-flex justify-content-end">
+              <img src={close_popup} alt="" onClick={e => setStage(!stage)} style={{ cursor: 'pointer' }} />
+            </div>
             <div className="d-flex justify-content-between">
               <h3>{popup && popup[0]}</h3>
               {/* <span> */}
-              <img src={close_popup} alt="" onClick={e => setStage(!stage)} style={{ cursor: 'pointer' }} />
               {/* </span> */}
             </div>
             <p className="hint">
