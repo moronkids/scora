@@ -139,6 +139,9 @@ const Leaderboards = () => {
             <div
               className="my-auto leaderboards__arrow-sort"
               onClick={e => setSorting(!sorting)}
+              style={{
+                transform: sorting && 'rotate(180deg)'
+              }}
             ></div>
           </div>
         </div>
@@ -147,7 +150,7 @@ const Leaderboards = () => {
           loading ? <Placeholder /> : data.length > 0 ? data : <p className="text-center">No data available</p>
         }
       </div>
-    </div>
+    </div >
   );
 };
 

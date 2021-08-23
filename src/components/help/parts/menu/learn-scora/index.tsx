@@ -13,7 +13,7 @@ const LearnScora = (props: any) => {
     <div className="help-center container">
       <div className="wrapping d-sm-flex d-none">
         <div className="left-side justify-content-start">
-          <ButtonBack padding="0 0 24px 0" />
+          <ButtonBack padding="0 0 24px 0" value_={"< Back to Help"} link={'/help'} />
           <div className="title">Learn Scora</div>
           <div
             className={`${tabsActive === 1 ? `list active` : `list`}`}

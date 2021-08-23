@@ -8,7 +8,7 @@ const MobileView = () => {
     return (
         <div className="mobile-view d-sm-none d-block">
             <div className="pb-4">
-                <ButtonBack padding={String} />
+                <ButtonBack padding={String} value_={"< Back to Help"} link={'/help'} />
             </div>
             <div className="mobile-view__list">
                 <p onClick={(e) => setTabsActive(1)}>How to start using Scora</p>

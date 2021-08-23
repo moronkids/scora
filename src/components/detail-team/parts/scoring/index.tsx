@@ -30,7 +30,7 @@ const Scoring = (props: { aspect: any }) => {
     <div className="scoring-scora fixed-bottom d-md-none d-flex justify-content-between px-3 " style={{ columnCount: scoring ? '1' : '2' }}>
       {(scoring && previewScore) || !scoring ? <>
         <div className="ur_score d-md-none d-block my-auto">
-          Yours: <br />
+          Yoursc: <br />
           <span className="mx-auto">{score_team?.score || team?.[final[1]].total}</span>
         </div></> : ''}
       <div className={`my-auto ${(scoring && !previewScore) && 'w-100'}`}>

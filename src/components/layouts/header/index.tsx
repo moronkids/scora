@@ -44,18 +44,27 @@ const Header = (props: { ishelp: any; headers: string; }) => {
       }
     }
   }
+  const [breadCrumbs, setbreadCrumbs] = useState('');
 
   useEffect(() => {
     // dispatch({ type: DO_LOADING, payload: true })
-    dispatch({ type: DO_LOADING, payload: true })
+    // dispatch({ type: DO_LOADING, payload: true })
     dispatch({ type: HIT_EVENT });
     dispatch({ type: HIT_PHASE });
 
     // dispatch({ type: HIT_TEAM, payload: [phase_active] });
     console.log(phase, "ckck -");
+    console.log('lokasi', location)
+    switch (location.pathname) {
+      case '/help/learn-scora':
+        setbreadCrumbs('Learn Scora')
+        // return;
+        break;
 
-
-  }, []);
+      default:
+        break;
+    }
+  }, [location]);
 
 
 
@@ -114,7 +123,12 @@ const Header = (props: { ishelp: any; headers: string; }) => {
         {isHelp ? (
           <div className="header-scora__title-help">
             <h3>Scora Help Center</h3>
-            <h5>Help Center</h5>
+            <div className="d-flex">
+              <Link to="/help">
+                <h5>Help Center</h5>
+              </Link>
+              {location.pathname !== '/help' && (<Link to={location.pathname}><h5>{`/ ` + breadCrumbs || ''}</h5></Link>)}
+            </div>
           </div>
         ) : props.headers === "off" ? (
           <div className="header-scora__title-help">

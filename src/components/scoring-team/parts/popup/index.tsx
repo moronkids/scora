@@ -64,20 +64,20 @@ const Index = () => {
 
                             </div>
                         </Link>
-                        <Link to="/">
-                            <div className="next-team">
-                                <Button
-                                    name="To Leaderboard"
-                                    color="#005F61"
-                                    border="1px solid #CCDFDF"
-                                    background="#ffffff"
-                                    width={160}
-                                    height={44}
-                                    fontsz="14"
-                                >
-                                </Button>
-                            </div>
-                        </Link>
+                        {/* <a href={window.location.pathname} hash="/#"> */}
+                        <div className="next-team" onClick={() => setSubmitted(false)}>
+                            <Button
+                                name="View Team"
+                                color="#005F61"
+                                border="1px solid #CCDFDF"
+                                background="#ffffff"
+                                width={160}
+                                height={44}
+                                fontsz="14"
+                            >
+                            </Button>
+                        </div>
+                        {/* </a> */}
                     </div>
                 </div>
 

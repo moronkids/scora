@@ -15,7 +15,7 @@ const CurrentEvent = (props: { ended: any; data: any, phase: any }) => {
   }
 
   return (
-    <div className="current-event">
+    <div className="current-event" onClick={(e) => { setStage(!stage); setpopup([data.display_name, props.phase, data.id]) }}>
       <div className="current-event__box d-flex flex-wrap">
         <div className="justify-content-start logo">
           <div className="current-event__box-in d-flex">

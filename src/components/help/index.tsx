@@ -30,7 +30,7 @@ const Help = () => {
             <h3>I'm having trouble with Scora</h3>
             <p className="">
               Comprehensive articles to skim through the basics.
-              </p>
+            </p>
           </div>
           {/* <Outside for="popup"> */}
           <div
@@ -41,7 +41,7 @@ const Help = () => {
             <h3>Contact Us</h3>
             <p className="">
               Our team trying as possible to help you
-              </p>
+            </p>
           </div>
           {/* </Outside> */}
         </div>
