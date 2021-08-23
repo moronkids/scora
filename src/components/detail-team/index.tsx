@@ -13,11 +13,15 @@ const DetailTeam = () => {
   let { name } = useParams()
   const dispatch = useDispatch()
   const final = name.split('_')
+  const location = useLocation()
   // get query string
+  const { scoring, setScoring, id, score, criteria, setCriteria, complete, setComplete } = useContext(Hooks);
+  console.log(criteria, 'dopp')
   useEffect(() => {
+
     //fetch detail team when variable name is changed
     dispatch({ type: HIT_DETAIL_TEAM, payload: final[2] })
-  }, [name])
+  }, [name, location])
   return (
     <div className="detailteam-scora">
       <DetailTeams />

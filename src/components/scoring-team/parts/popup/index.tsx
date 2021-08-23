@@ -13,7 +13,7 @@ const Index = () => {
         updated: state.event.detail_team[0]?.last_updated,
         list_team: state.event.team
     }))
-    const { setScoring, setPreviewScore, next, setNext, submitted, setSubmitted } = useContext(Hooks);
+    const { setScoring, setPreviewScore, next, setNext, submitted, setSubmitted, setCriteria, setNextTeam } = useContext(Hooks);
     let { name } = useParams();
     let final = [0, 1, 2]
     if (name !== undefined) {
@@ -48,7 +48,7 @@ const Index = () => {
                         <p>Your score for Powerbrain has been submitted</p>
                     </div>
                     <div className="action d-flex">
-                        <Link to={next && `/detail/team/${list_team[parseInt(final[1]) + 1]?.name.replace(' ', '%20')}_${parseInt(final[1]) + 1}_${list_team[parseInt(final[1]) + 1]?.team_id}_${list_team[parseInt(final[1]) + 1]?.id}`}>
+                        <Link onClick={(e) => { setNextTeam(true); setCriteria([]) }} to={next && `/detail/team/${list_team[parseInt(final[1]) + 1]?.name.replace(' ', '%20')}_${parseInt(final[1]) + 1}_${list_team[parseInt(final[1]) + 1]?.team_id}_${list_team[parseInt(final[1]) + 1]?.id}`}>
                             {/* <Link to="/"> */}
                             <div className="next-team">
                                 <Button name="Next Team"

@@ -10,7 +10,7 @@ const Scoring = (props: { aspect: any }) => {
   const final = name.split('_')
 
   // get state glob from context
-  const { scoring, previewScore, complete, setCriteria } = useContext(Hooks)
+  const { scoring, previewScore, complete, criteria, setCriteria, nextTeam, setNextTeam } = useContext(Hooks)
 
   // get state glob from redux store
   const { aspect, team, score_team } = useSelector((state: Store) => ({
@@ -21,8 +21,10 @@ const Scoring = (props: { aspect: any }) => {
 
   useEffect(() => {
     //reset length criteria when scoring, previewScore & team changed
-    if (team?.[final[1]['total'] == 0]) {
-      setCriteria([])
+    console.log(criteria, nextTeam, 'koloh')
+    if (team?.[final[1]]['total'] == 0 || nextTeam) {
+      // setCriteria([])
+      setNextTeam(false);
     }
   }, [scoring, previewScore, team]);
 
@@ -30,7 +32,7 @@ const Scoring = (props: { aspect: any }) => {
     <div className="scoring-scora fixed-bottom d-md-none d-flex justify-content-between px-3 " style={{ columnCount: scoring ? '1' : '2' }}>
       {(scoring && previewScore) || !scoring ? <>
         <div className="ur_score d-md-none d-block my-auto">
-          Yoursc: <br />
+          Yours: <br />
           <span className="mx-auto">{score_team?.score || team?.[final[1]].total}</span>
         </div></> : ''}
       <div className={`my-auto ${(scoring && !previewScore) && 'w-100'}`}>

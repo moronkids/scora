@@ -6,10 +6,10 @@ import { data } from 'dummy-data/scoring-data';
 import { useDispatch, useSelector } from "react-redux";
 import { HIT_ASPECT_PHASE_EVENT } from "redux/actions";
 import { Store } from "redux";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 
 const Scoring = (props) => {
-
+  const location = useLocation()
   let { name } = useParams()
   const final = name.split('_')
   const dispatch = useDispatch();
@@ -33,6 +33,7 @@ const Scoring = (props) => {
     })
   }
   useEffect(() => {
+
     for (let i in data) {
       if (data[i].is_active) {
         setevent(data[i].short_name);
@@ -43,8 +44,10 @@ const Scoring = (props) => {
     // if (phase !== 0) {
     dispatch({ type: HIT_ASPECT_PHASE_EVENT, payload: { event: event, phase: phase } })
     // }
+    // setCriteria([])
+
+    console.log(criteria, aspect, "dope")
     for (let index = 0; index < criteria.length; index++) {
-      console.log(criteria, "dope")
       if (criteria[index][2] === 'Not Rated') {
         setComplete(false);
         break
@@ -52,7 +55,7 @@ const Scoring = (props) => {
       setComplete(true);
     }
   }, [id, score, criteria, complete, data]);
-  console.log(team, "inikah")
+  // console.log(team, "inikah")
   return (
     <div className={`sticky-top ${scoring ? "" : "d-none"}`}>
       <div className="scoring-team position-absolute">

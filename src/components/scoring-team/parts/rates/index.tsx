@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Hooks } from "providers";
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 const Rates = (props) => {
   let { name } = useParams()
   const final = name.split('_')
+  const location = useLocation()
   const { update_score, criteria, setCriteria, n, setN } = useContext(Hooks);
   let criteriax = props.criteria;
   const [data, setData] = useState(criteria)
 
   // setCriteria()
-  console.log(criteria, criteriax, "cokle")
-  // console.log(props.scoring, "cokle")
+  // console.log(props.criteria, "bedesx")
   criteriax.aspect_id = props.index + 1
   useEffect(() => {
     let scr = ''
@@ -42,8 +42,10 @@ const Rates = (props) => {
     //   setCriteria(criteria => [...criteria, [criteriax.aspect_id, criteriax.score, scr]])
     // }
 
+    console.log(props.scoring, props.hide, props.aspect, "bedes")
     if (!props.scoring) {
       if (props.aspect !== undefined) {
+
         if (criteria.length <= props.aspect) {
           let data = [...criteria];
           for (let index = 0; index < props.aspect; index++) {
@@ -54,16 +56,16 @@ const Rates = (props) => {
       }
     }
     else {
-      console.log('cokle', props.hide)
       if (props.hide === false) {
-        console.log(n, "cokle")
+        console.log('anjerrr', props.hide)
+        console.log(criteria, "posing")
         setCriteria(criteria => [...criteria, [criteria.length < 0 ? 1 : criteria.length + 1, criteriax.score, scr]])
         setN(n + 1)
       }
     }
 
 
-  }, [props.scoring, name]);
+  }, [props.scoring, name, location]);
 
   return (
     <div
