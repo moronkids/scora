@@ -29,7 +29,7 @@ body {
   background: #ffffff !important;
   // width: 320px !important;
   // box-shadow: 0px 0px 12px #474747 !important;
-  width: 280px !important;
+  // width: 280px !important;
   border-radius: 44px !important;
   background: #196f70 !important;
   font-family: Open Sans !important;
@@ -40,7 +40,7 @@ body {
   text-align: center !important;
   color: #ffffff !important;
   /* White */
-
+  padding: 0 21px !important;
   @media (max-width: 524px) {
     width: 90% !important;
     display: flex !important;
