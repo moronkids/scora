@@ -2,14 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import IconSuccess from 'assets/img/icons/Success.svg';
 import IconFailed from 'assets/img/icons/IconFailed.svg';
 import Button from 'components/layouts/buttons/index'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Store } from 'redux';
 import { Hooks } from 'providers';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import { HIT_SUBMIT_SCORE, POST_SUBMIT_SCORE } from 'redux/actions';
 const Index = () => {
     // const [submitted, setSubmitted] = useState(false)
     // const [next, setNext] = useState(false)
+    const dispatch = useDispatch();
     const { updated, list_team, scoring } = useSelector((state: Store) => ({
         updated: state.event.detail_team[0]?.last_updated,
         list_team: state.event.team,
@@ -38,7 +40,7 @@ const Index = () => {
         setScoring(false)
     }, [updated, scoring])
 
-    console.log(scoring, "adalahoi")
+    console.log(scoring, submitted, "adalahoi")
     return (
         <>
             {scoring === 'failed' ? <div className={`success_popup d-block`} >
@@ -69,7 +71,7 @@ const Index = () => {
                             </div>
                         </Link>
                         {/* <a href={window.location.pathname} hash="/#"> */}
-                        <div className="next-team" onClick={() => setSubmitted(false)}>
+                        <div className="next-team" onClick={() => { setSubmitted(false); dispatch({ type: POST_SUBMIT_SCORE, payload: 'reset' }) }}>
                             <Button
                                 name="View Team"
                                 color="#005F61"
@@ -89,6 +91,7 @@ const Index = () => {
                 {submitted && (
                     <div className="success_popup__box m-auto">
                         <img src={IconSuccess} alt="" className="icon" />
+                        <img src={IconFailed} alt="" className="icon d-none" />
                         <div className="desc">
                             <h1>Success</h1>
                             <p>Your score for Powerbrain has been submitted</p>

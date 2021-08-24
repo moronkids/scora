@@ -84,8 +84,8 @@ function* getPhaseByEvent({ payload }: any) {
         console.log(event, "denjori")
         yield put({ type: GET_PHASE_EVENT, payload: [event, payload[1]] });
     } catch (error) {
-        alert('error nih')
-        console.log(error, 'error nih')
+        // alert('error nih')
+        // console.log(error, 'error nih')
     }
 }
 
@@ -172,7 +172,7 @@ function* postSubmitScoreSaga({ payload }: any) {
 
         // yield put({ type: POST_SCORE, payload: score });
     } catch (error) {
-        alert('dor')
+        // alert('dor')
         yield put({ type: POST_SUBMIT_SCORE, payload: 'failed' });
         console.log(error, "masalah")
     }

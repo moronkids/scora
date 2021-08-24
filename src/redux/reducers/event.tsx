@@ -127,8 +127,9 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case POST_SUBMIT_SCORE: {
-            alert(payload)
+            // alert(payload)
             if (payload === undefined) return { ...state }
+            if (payload === 'reset') return { ...state, scoring: '' };
             if (payload === 'failed') return { ...state, scoring: payload };
             if (payload.status !== 200) return { ...state };
             // state['detail_team'] = payload.data.results;
