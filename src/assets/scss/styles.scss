@@ -28,6 +28,10 @@ body {
 .toastify-bg-success {
   background: #ffffff !important;
   width: 320px !important;
+  box-shadow: 0px 0px 12px #474747 !important;
+  @media (max-width: 524px) {
+    width: 100% !important;
+  }
 }
 .toastify-text-success {
   font-family: Open Sans !important;

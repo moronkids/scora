@@ -94,9 +94,11 @@
       }
     }
     & .title-event {
+      min-width: 250px;
       @media (max-width: 547px) {
         flex-basis: 80%;
         padding-bottom: 20px;
+        min-width: fit-content;
         // border-bottom: 1px solid #e8e8e8;
       }
     }
