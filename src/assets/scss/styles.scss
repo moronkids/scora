@@ -26,19 +26,22 @@ body {
   background-color: #fdfdfd !important;
 }
 .toastify-bg-success {
-  background: #44a08d !important; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #093637, #44a08d) !important; /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #093637,
-    #44a08d
-  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ffffff !important;
+  width: 320px !important;
 }
 .toastify-text-success {
-  color: #fff !important;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+
+  /* Text Primary */
+
+  color: #3a3a3a !important;
 }
 .toastify-progress-bar {
-  background: #fff !important;
+  background: linear-gradient(90deg, #46ad9b 0.78%, #13a2a5 100%) !important;
 }
 .toastify-bg-error {
   background: #e96443 !important; /* fallback for old browsers */
