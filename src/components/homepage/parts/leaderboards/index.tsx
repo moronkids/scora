@@ -29,9 +29,10 @@ const Leaderboards = () => {
     className: 'toastify-bg-success',
     bodyClassName: "toastify-text-success",
     progressClassName: 'toastify-progress-bar',
-    position: "top-right",
+    position: "bottom-center",
+
     autoClose: 3000,
-    hideProgressBar: false,
+    hideProgressBar: true,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,

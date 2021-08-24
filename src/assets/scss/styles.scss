@@ -27,11 +27,29 @@ body {
 }
 .toastify-bg-success {
   background: #ffffff !important;
-  width: 320px !important;
-  box-shadow: 0px 0px 12px #474747 !important;
+  // width: 320px !important;
+  // box-shadow: 0px 0px 12px #474747 !important;
+  width: 280px !important;
+  border-radius: 44px !important;
+  background: #196f70 !important;
+  font-family: Open Sans !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  /* White */
+
   @media (max-width: 524px) {
-    width: 100% !important;
+    width: 90% !important;
+    display: flex !important;
+    margin: 0 auto !important;
+    margin-bottom: 30px !important;
   }
+}
+.Toastify__close-button.Toastify__close-button--default {
+  display: none !important;
 }
 .toastify-text-success {
   font-family: Open Sans !important;
@@ -42,7 +60,7 @@ body {
 
   /* Text Primary */
 
-  color: #3a3a3a !important;
+  color: #ffffff !important;
 }
 .toastify-progress-bar {
   background: linear-gradient(90deg, #46ad9b 0.78%, #13a2a5 100%) !important;
