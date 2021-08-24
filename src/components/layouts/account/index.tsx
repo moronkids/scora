@@ -6,7 +6,7 @@ import { useSelector, useDispatch, connect } from "react-redux"; //hooks
 import { Link } from 'react-router-dom';
 const Account = (props: any) => {
   const dispatch = useDispatch();
-  const { profile, setProfile } = useContext(Hooks);
+  const { contactUs, setContactUs, sorting, profile, setProfile, setSorting, bgActive, setbgActive } = useContext(Hooks);
   const { auth } = useSelector((state: store) => ({
     auth: state.auth.data.user
   }));
@@ -29,10 +29,10 @@ const Account = (props: any) => {
           Change Password</div>
           <div className="menu" onClick={(e) => logOut()}>Logout</div> */}
           <ul className="m-0 p-0 w-100">
-            <Link to="/list-event">
+            <Link to="/list-event" onClick={() => { setbgActive(false); setProfile(false); setSorting(false) }}>
               <li>View List Event</li></Link>
-            <li>Change Password</li>
-            <li onClick={(e) => logOut()}>Logout</li>
+            <li onClick={() => { setbgActive(false); setProfile(false); setSorting(false) }}>Change Password</li>
+            <li onClick={(e) => { logOut(); setbgActive(false); setProfile(false); setSorting(false) }}>Logout</li>
           </ul>
         </div>
       </div>

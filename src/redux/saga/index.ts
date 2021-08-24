@@ -172,7 +172,9 @@ function* postSubmitScoreSaga({ payload }: any) {
 
         // yield put({ type: POST_SCORE, payload: score });
     } catch (error) {
-        console.log(error)
+        alert('dor')
+        yield put({ type: POST_SUBMIT_SCORE, payload: 'failed' });
+        console.log(error, "masalah")
     }
 }
 type postCurrentEvents = SagaReturnType<typeof apiPostSetCurrent>

@@ -13,6 +13,7 @@ const initialState = {
     fav: 'reset',
     event_active: null,
     phase_active: [],
+    scoring: ''
 
 
 };
@@ -126,14 +127,14 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case POST_SUBMIT_SCORE: {
-
+            alert(payload)
             if (payload === undefined) return { ...state }
+            if (payload === 'failed') return { ...state, scoring: payload };
             if (payload.status !== 200) return { ...state };
             // state['detail_team'] = payload.data.results;
             state['detail_team'][0]['last_updated'] = new Date();
             state['detail_team'][state['detail_team'].length - 1]['score'] = payload.data.data.total
-            // state['team']
-            // alert("masuk sini")
+
 
             return {
                 ...state,
