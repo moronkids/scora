@@ -56,9 +56,11 @@ const FormBox = () => {
     // alert('sd')
     // notify()
     if (status.error) {
-      notify(status.error);
+      // notify(status.error);
 
-      dispatch({ type: DO_LOGIN, payload: 'reset' })
+      setTimeout(() => {
+        dispatch({ type: DO_LOGIN, payload: 'reset' })
+      }, 5000);
       dispatch({ type: DO_LOADING, payload: false })
     } else {
       dispatch({ type: DO_LOADING, payload: false })
@@ -67,35 +69,38 @@ const FormBox = () => {
 
 
   return (
-    <div className="login__form-box mx-auto">
-      {/* <p className={`error_msg ${stat?.error ? 'd-block' : 'd-none'}`}>{stat.error}</p> */}
-      <h1 className="login__signin text-center">Login to continue</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {
-          content.inputs.map((val, i) => {
-            return (
-              <div className="input-fields" key={i}>
-                <h1
-                  className="input-fields__title"
-                  style={{ padding: val.padding ? val.padding : 0 }}
-                >
-                  {val.label}
-                </h1>
-                <input
-                  className="input-fields__input-box"
-                  type={val.type}
-                  placeholder={val.label}
-                  {...register(val.name)}
-                />
-                <p className={`error_msg ${errors[val.name]?.message ? 'd-block' : 'd-none'}`}>{
-                  errors[val.name]?.message === 'password is a required field' && 'Password is required' || errors[val.name]?.message === 'username is a required field' && 'Username is required'
-                }</p>
-              </div>
+    <>
+      {console.log(Object.keys(errors).length, status, "Sdsd")}
+      <div className={`error-state text-center m-auto ${status.error ? 'd-block' : 'd-none'}`} style={{ background: '#FFE6E2', padding: '10px 20px' }}>You entered an invalid username or password.</div>
+      <div className="login__form-box mx-auto">
+        {/* <p className={`error_msg ${stat?.error ? 'd-block' : 'd-none'}`}>{stat.error}</p> */}
+        <h1 className="login__signin text-center">Login to continue</h1>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {
+            content.inputs.map((val, i) => {
+              return (
+                <div className="input-fields" key={i}>
+                  <h1
+                    className="input-fields__title"
+                    style={{ padding: val.padding ? val.padding : 0 }}
+                  >
+                    {val.label}
+                  </h1>
+                  <input
+                    className="input-fields__input-box"
+                    type={val.type}
+                    placeholder={val.label}
+                    {...register(val.name)}
+                  />
+                  <p className={`error_msg ${errors[val.name]?.message ? 'd-block' : 'd-none'}`}>{
+                    errors[val.name]?.message === 'password is a required field' && 'Password is required' || errors[val.name]?.message === 'username is a required field' && 'Username is required'
+                  }</p>
+                </div>
 
-            )
-          })
-        }
-        {/* <Input
+              )
+            })
+          }
+          {/* <Input
           title="Email"
           padding="40px 0 0 0"
           placeholder="Email"
@@ -111,14 +116,15 @@ const FormBox = () => {
           password={true}
           // error={ }
         /> */}
-        <div className="mt-4" style={{ cursor: 'pointer' }} >
-          <Button name="Login" padding="11px 0 11px 0" width="100%" type="submit" value="Submit" />
-        </div>
-      </form>
-      <Link to="/forgotpass">
-        <h3 className="mx-auto text-center">Forgot your password?</h3>
-      </Link>
-    </div>
+          <div className="mt-4" style={{ cursor: 'pointer' }} >
+            <Button name="Login" padding="11px 0 11px 0" width="100%" type="submit" value="Submit" />
+          </div>
+        </form>
+        <Link to="/forgotpass">
+          <h3 className="mx-auto text-center">Forgot your password?</h3>
+        </Link>
+      </div>
+    </>
   );
 };
 
