@@ -71,7 +71,8 @@ const FormBox = () => {
   return (
     <>
       {console.log(Object.keys(errors).length, status, "Sdsd")}
-      <div className={`error-state text-center m-auto ${status.error ? 'd-block' : 'd-none'}`} style={{ background: '#FFE6E2', padding: '10px 20px' }}>You entered an invalid username or password.</div>
+      <div className={`error-state text-center m-auto ${status.error ? 'd-block' : 'd-none'}`}>You entered an invalid username or password.</div>
+      <div className={`success-state text-center m-auto ${status.logged ? 'd-block' : 'd-none'}`}>Login Success</div>
       <div className="login__form-box mx-auto">
         {/* <p className={`error_msg ${stat?.error ? 'd-block' : 'd-none'}`}>{stat.error}</p> */}
         <h1 className="login__signin text-center">Login to continue</h1>

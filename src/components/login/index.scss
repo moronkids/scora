@@ -40,13 +40,19 @@
   font-size: 14px;
   line-height: 150%;
   /* identical to box height, or 21px */
-
+  background: #ffe6e2;
   text-align: center;
 
   color: #e11f1f;
-
+  padding: 10px 20px;
   @media (max-width: 574px) {
     width: 343px;
-    padding: 24px 28px;
+    padding: 10px 10px;
   }
+}
+
+.success-state {
+  @extend .error-state;
+  background: #edf4f4;
+  color: #005f61;
 }

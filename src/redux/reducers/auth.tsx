@@ -21,10 +21,12 @@ export default (state = initialState, { type, payload }: any) => {
                 }
             }
             if (payload.status !== 200) return { ...state };
-
+            state = null
             return {
                 ...state,
                 ...payload,
+                logged: true,
+
             };
         }
         default:
