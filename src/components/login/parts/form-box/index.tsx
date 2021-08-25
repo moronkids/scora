@@ -87,7 +87,9 @@ const FormBox = () => {
                   placeholder={val.label}
                   {...register(val.name)}
                 />
-                <p className={`error_msg ${errors[val.name]?.message ? 'd-block' : 'd-none'}`}>{errors[val.name]?.message}</p>
+                <p className={`error_msg ${errors[val.name]?.message ? 'd-block' : 'd-none'}`}>{
+                  errors[val.name]?.message === 'password is a required field' && 'Password is required' || errors[val.name]?.message === 'username is a required field' && 'Username is required'
+                }</p>
               </div>
 
             )
