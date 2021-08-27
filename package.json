@@ -63,5 +63,10 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7"
-  }
+  },
+  "description": "typescript-version",
+  "main": "index.js",
+  "repository": "https://sulistyoardani@bitbucket.org/dsn-js/scora-web.git",
+  "author": "dailysocial-fe-team",
+  "license": "MIT"
 }
