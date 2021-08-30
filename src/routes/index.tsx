@@ -10,6 +10,7 @@ import HelpPage from 'pages/help';
 import LearnScora from 'components/help/parts/menu/learn-scora';
 import ListEvent from 'components/list-event'
 import ForgotPass from 'components/forgot-password'
+import ChangePass from 'components/change-password'
 const Routes = () => {
     return (
         <>
@@ -20,11 +21,12 @@ const Routes = () => {
                 <LoggedRoutes exact path="/help" component={HelpPage} ishelp={true} />
                 <LoggedRoutes exact path="/help/learn-scora" component={LearnScora} ishelp={true} />
                 <LoggedRoutes exact path="/list-event" component={ListEvent} header={false} />
+                <LoggedRoutes exact path="/forgotpass-logged" component={ChangePass} withOutHeader={true} />
                 {/* login routes */}
 
                 {/* guest routes */}
-                <GuestRoutes exact path="/login" component={LoginPage} />
                 <GuestRoutes exact path="/forgotpass" component={ForgotPass} />
+                <GuestRoutes exact path="/login" component={LoginPage} />
                 {/* guest routes */}
             </Switch>
         </>

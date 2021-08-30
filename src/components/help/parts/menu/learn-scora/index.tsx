@@ -64,7 +64,7 @@ const LearnScora = (props: any) => {
               <h1>Still need help?</h1>
               <p className="">
                 Our team trying as possible to help you,{" "}
-                <span onClick={e => setContactUs(!contactUs)}>Contact Us</span>
+                <span style={{ cursor: 'pointer' }} onClick={e => setContactUs(!contactUs)}>Contact Us</span>
               </p>
             </div>
           </div>

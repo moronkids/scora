@@ -48,7 +48,7 @@ const Body = props => {
           <PreviewScore />
           <ScoringTeams /></>)}
       </div>
-      <Headers ishelp={props.ishelp} headers={props.headers} />
+      {!props.withOutHeader && <Headers ishelp={props.ishelp} headers={props.headers} />}
       {props.children}
     </>
   );

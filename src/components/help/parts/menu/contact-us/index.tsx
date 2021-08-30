@@ -19,7 +19,7 @@ const PopUp = props => {
             <img src={close_popup} alt="" style={{ cursor: 'pointer' }} onClick={e => setContactUs(!contactUs)} />
           </div>
           <div className="d-flex justify-content-between pb-2">
-            <h3>Contact Us</h3>
+            <h3 >Contact Us</h3>
             {/* <span> */}
             {/* </span> */}
           </div>

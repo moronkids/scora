@@ -41,7 +41,7 @@ const Guest = ({ component: Component, ...rest }) => {
             <SubmitSuccessPopup />
             {
               rest.header === undefined ? (
-                <Wrapper ishelp={rest.ishelp}>
+                <Wrapper ishelp={rest.ishelp} withOutHeader={rest.withOutHeader}>
                   <Component {...props} />
                 </Wrapper>
               ) : (

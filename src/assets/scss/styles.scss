@@ -67,7 +67,11 @@ body {
 }
 .toastify-bg-error {
   background: #e96443 !important; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #904e95, #e96443) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to top,
+    #904e95,
+    #e96443
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
     #904e95,
@@ -122,6 +126,7 @@ body {
 @import "../../components/help/index.scss";
 @import "../../components/list-event/index.scss";
 @import "../../components/forgot-password/index.scss";
+@import "../../components/change-password/index.scss";
 @import "../../components/layouts/account/index.scss";
 html,
 body {

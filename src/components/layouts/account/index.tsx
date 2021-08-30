@@ -31,7 +31,9 @@ const Account = (props: any) => {
           <ul className="m-0 p-0 w-100">
             <Link to="/list-event" onClick={() => { setbgActive(false); setProfile(false); setSorting(false) }}>
               <li>View List Event</li></Link>
-            <li onClick={() => { setbgActive(false); setProfile(false); setSorting(false) }}>Change Password</li>
+            <Link to="/forgotpass-logged">
+              <li onClick={() => { setbgActive(false); setProfile(false); setSorting(false) }}>Change Password</li>
+            </Link>
             <li onClick={(e) => { logOut(); setbgActive(false); setProfile(false); setSorting(false) }}>Logout</li>
           </ul>
         </div>
