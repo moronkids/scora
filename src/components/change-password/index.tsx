@@ -22,7 +22,7 @@ const ForgotPass = () => {
           <h2 className="text-center" style={{ maxWidth: '390px', paddingTop: '20px' }}>
             {/* Please call your organizer/admin officer this <b>[Event Name]</b>{" "}
               or{" "} */}
-            Please call [Event Name] 's staff or click here:
+            Please call [Event Name] 's staff or click here to
             <b
               style={{ color: "#005F61", cursor: 'pointer' }}
               onClick={e => setContactUs(!contactUs)}

@@ -18,8 +18,8 @@ const ForgotPass = () => {
           />
         </Link>
         <div className="box-forgot mx-auto">
-          <h1>Forgot your password?</h1>
-          <h2>
+          <h1 className="text-center mx-auto">Forgot your password?</h1>
+          <h2 className="text-center mx-auto">
             {/* Please call your organizer/admin officer this <b>[Event Name]</b>{" "}
               or{" "} */}
             Please call [Event Name] 's staff or click here:
