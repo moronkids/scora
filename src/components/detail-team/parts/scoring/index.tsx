@@ -13,10 +13,11 @@ const Scoring = (props: { aspect: any }) => {
   const { scoring, previewScore, complete, criteria, setCriteria, nextTeam, setNextTeam } = useContext(Hooks)
 
   // get state glob from redux store
-  const { aspect, team, score_team } = useSelector((state: Store) => ({
+  const { aspect, team, score_team, event } = useSelector((state: Store) => ({
     aspect: state.event.aspect,
     team: state.event.team,
-    score_team: state.event.detail_team[state.event.detail_team.length - 1]
+    score_team: state.event.detail_team[state.event.detail_team.length - 1],
+    event: state.event
   }));
 
   useEffect(() => {
@@ -51,7 +52,8 @@ const Scoring = (props: { aspect: any }) => {
             disabled={complete ? false : true}
             width="100%"
           /> : <ButtonScoring
-            name="Scoring"
+            name={team[final[1]].total > 0 ? 'Edit Score' : "Scoring"}
+
             padding="13px 55px 13px 55px"
             function={1}
           />

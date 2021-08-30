@@ -58,9 +58,11 @@ const Index = () => {
                             {/* <Link to="/"> */}
                             <div className="next-team">
                                 <Button name="Next Team"
-                                    background="#DBE9E9"
+                                    background="#005F61;
+"
                                     disabled={!next}
-                                    color="#005F61"
+                                    color="#FFFFFF
+"
                                     width={160}
                                     height={44}
                                     fontsz="14"
@@ -94,16 +96,16 @@ const Index = () => {
                         <img src={IconFailed} alt="" className="icon d-none" />
                         <div className="desc">
                             <h1>Success</h1>
-                            <p>Your score for Powerbrain has been submitted</p>
+                            <p>{`Your score for ${final[0]} has been submitted`}</p>
                         </div>
                         <div className="action d-flex">
                             <Link onClick={(e) => { setNextTeam(true); setCriteria([]) }} to={next && `/detail/team/${list_team[parseInt(final[1]) + 1]?.name.replace(' ', '%20')}_${parseInt(final[1]) + 1}_${list_team[parseInt(final[1]) + 1]?.team_id}_${list_team[parseInt(final[1]) + 1]?.id}`}>
                                 {/* <Link to="/"> */}
                                 <div className="next-team">
                                     <Button name="Next Team"
-                                        background="#DBE9E9"
+                                        background="#005F61"
                                         disabled={!next}
-                                        color="#005F61"
+                                        color="#FFFFFF"
                                         width={160}
                                         height={44}
                                         fontsz="14"

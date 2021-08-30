@@ -17,11 +17,12 @@ const Leaderboards = () => {
   // const { finalScore, setFinalScore, next, setNext, submitted, setSubmitted } = useContext(Hooks);
 
   // get glob state from redux store
-  const { detail_team, team, length_team, score_team } = useSelector((state: Store) => ({
+  const { event, detail_team, team, length_team, score_team } = useSelector((state: Store) => ({
     detail_team: state.event.detail_team,
     team: state.event.team,
     length_team: state.event.detail_team.length,
-    score_team: state.event.detail_team[state.event.detail_team.length - 1]
+    score_team: state.event.detail_team[state.event.detail_team.length - 1],
+    event: state.event
   }))
 
   return (
@@ -65,8 +66,9 @@ const Leaderboards = () => {
               <span className="mx-auto">{score_team?.score || team?.[final[1]].total}</span>
             </div>
             <div className="justify-content-center my-auto d-none d-md-block">
+
               <ButtonScoring
-                name="Scoring"
+                name={team[final[1]].total > 0 ? 'Edit Score' : "Scoring"}
                 padding="13px 55px 13px 55px"
                 function={1}
               />
