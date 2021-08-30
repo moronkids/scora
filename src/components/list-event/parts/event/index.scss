@@ -44,7 +44,16 @@
       padding-top: 12px;
       color: #4e4e4e;
       @media (max-width: 574px) {
-        font-size: 12px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 150%;
+        /* or 21px */
+
+        /* Text Secondary */
+
+        color: #4e4e4e;
       }
     }
     & .status {
@@ -99,6 +108,7 @@
         flex-basis: 80%;
         padding-bottom: 20px;
         min-width: fit-content;
+        border-bottom: 1px solid #e8e8e8;
         // border-bottom: 1px solid #e8e8e8;
       }
     }
@@ -150,7 +160,12 @@
       line-height: 150%;
       color: #4e4e4e;
       @media (max-width: 547px) {
-        font-size: 12px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        color: #4e4e4e;
         padding-top: 20px;
       }
     }
@@ -162,7 +177,12 @@
       line-height: 150%;
       color: #040404;
       @media (max-width: 574px) {
-        font-size: 14px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #3a3a3a;
       }
     }
   }
