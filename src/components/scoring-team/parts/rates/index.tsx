@@ -18,7 +18,7 @@ const Rates = (props) => {
     if (criteriax !== undefined) {
       switch (criteriax.score) {
         case 1:
-          scr = 'Fair'
+          scr = 'Poor'
           break;
         case 2:
           scr = 'Fair'
@@ -89,7 +89,7 @@ const Rates = (props) => {
                     : "grayscale(100%)"
                   : "grayscale(100%)"
             }}
-            onClick={e => update_score(criteriax.aspect_id, 1, "Fair")}
+            onClick={e => update_score(criteriax.aspect_id, 1, "Poor")}
 
           />
           <div
@@ -153,15 +153,19 @@ const Rates = (props) => {
               <h3>Not&nbsp;Rated</h3>
             ) : (
               // <></>
-              <h3
+              <h3 style={{
+                color: criteria[criteriax.aspect_id - 1][1] <= 2 && '#EF3A3A'
+              }}
                 dangerouslySetInnerHTML={{ __html: criteria.length > 0 && criteria[criteriax.aspect_id - 1]?.[2] }}
               ></h3>
             )}
             {criteria.length < 1 ? (
-              <p className="">-</p>
+              <p className="" >-</p>
             ) : (
               // <p>{criteria[criteriax.aspect_id - 1][1]}</p>
-              <p>{criteria.map((val) => criteriax.aspect_id === val[0] && val[1])}</p>
+              <p style={{
+                color: criteria[criteriax.aspect_id - 1][1] <= 2 && '#EF3A3A'
+              }}>{criteria.map((val) => criteriax.aspect_id === val[0] && val[1])}</p>
             )}
           </div>
         </div>
