@@ -54,7 +54,7 @@ const Guest = ({ component: Component, ...rest }) => {
                   {/* {
                     event !== null ? <Component {...props} /> : <ListEvent />
                   } */}
-                  <Component {...props} />}
+                  <Component {...props} />
 
                 </Wrapper>
               ) : (
