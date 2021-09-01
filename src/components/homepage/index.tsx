@@ -41,7 +41,7 @@ const Hompage = () => {
   }))
   useEffect(() => {
     dispatch({ type: HIT_TEAM, payload: [localStorage.getItem('phase') || phase_active_?.[0], order || null] })
-  }, [phase])
+  }, [phase, order])
   const cek_phase = localStorage.getItem('phase')
   if (cek_phase === '0') {
     // return <Redirect to="/forgotpass" />
