@@ -6,19 +6,25 @@ import ContactUs from "components/help/parts/menu/contact-us";
 import { Hooks } from "providers"
 import Stage from 'components/list-event/parts/popup'
 import SubmitSuccessPopup from 'components/scoring-team/parts/popup'
+import { useSelector } from "react-redux";
+import { store } from "redux";
+import ListEvent from 'pages/list-event'
 const Guest = ({ component: Component, ...rest }) => {
 
-
+  const { event } = useSelector((state: typeof store) => ({ event: state?.event?.event_active }))
   const { contactUs, setContactUs, sorting, profile, setProfile, setSorting, bgActive, setbgActive } = useContext(Hooks);
   useEffect(() => {
     if (sorting || profile) {
       setbgActive(true)
     }
-  }, [sorting, profile])
+  }, [sorting, profile, event])
   const token = localStorage.getItem('token');
   if (token === null) {
     return <Redirect to="/login" />
   }
+  // if (event === null) {
+  //   return <Redirect to="/list-event" />
+  // }
 
   return (
     <Route
@@ -41,12 +47,19 @@ const Guest = ({ component: Component, ...rest }) => {
             <SubmitSuccessPopup />
             {
               rest.header === undefined ? (
-                <Wrapper ishelp={rest.ishelp} withOutHeader={rest.withOutHeader}>
-                  <Component {...props} />
+                <Wrapper ishelp={rest.ishelp} withOutHeader={event !== null && rest.withOutHeader} headers={event === null && 'off'}>
+                  {console.log(event, "colss1")}
+                  {
+                    event !== null ? <Component {...props} /> : <ListEvent />
+                  }
+
                 </Wrapper>
               ) : (
                 <Wrapper headers={'off'}>
-                  <Component {...props} />
+                  {console.log(event, "colss")}
+                  {
+                    event !== null ? <Component {...props} /> : <ListEvent />
+                  }
                 </Wrapper>
               )
             }

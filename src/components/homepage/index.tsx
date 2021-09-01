@@ -9,17 +9,28 @@ import ListEvent from 'components/list-event';
 import { Redirect, useHistory } from "react-router";
 const Hompage = () => {
   const history = useHistory();
-  const event = useSelector((state: typeof store) => state.event.event_active)
-  const [redirect, setRedirect] = useState(false)
-  useEffect(() => {
-    console.log(event, "klumpur")
-    if (event === null) {
-      setRedirect(true)
-    }
-  }, [event])
+  const { event, team } = useSelector((state: typeof store) => ({
+    event: state?.event?.event_active,
+    team: state?.event?.team?.length
+  }))
+  const [redirect, setRedirect] = useState()
+  // useEffect(() => {
+  //   console.log(team > 0, team !== undefined, "klumpur")
+  //   if (!team > 0 && !team !== undefined) {
+  //     // return
+  //     alert('sini po')
+  //     setRedirect(false)
+  //   }
+  //   else {
+  //     setRedirect(true)
+  //   }
+  // }, [event, redirect])
+  // if (redirect) {
+  //   return <Redirect to="/list-event" />
+  // }
   return (
     <>
-      {redirect ? <Redirect to="/list-event" /> : null}
+      {/* {redirect && <Redirect to="/list-event" />} */}
       <div className="homepage-scora">
         {/* <Sorting /> */}
         <div className="spinner-border" role="status">

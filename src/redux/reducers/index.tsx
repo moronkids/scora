@@ -19,11 +19,12 @@ const authPersistConfig = {
 const eventPersistConfig = {
     key: "event",
     storage: storage,
-    whitelist: ['team', 'detail_team', 'phase_active']
+    whitelist: ['team', 'detail_team']
 };
 
 const appReducer = combineReducers({
-    event: persistReducer(eventPersistConfig, event),
+    // event: persistReducer(eventPersistConfig, event),
+    event: event,
     loading: loading,
     auth: persistReducer(authPersistConfig, auth)
 });
