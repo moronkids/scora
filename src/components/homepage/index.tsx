@@ -40,6 +40,12 @@ const Hompage = () => {
     // return
     // return <Redirect to="/login" />
   }
+  else if (cek_phase !== '0') {
+    if (event === null) {
+
+      window.location.href = '/list-event?sort=previous'
+    }
+  }
   return (
     <>
       {/* {redirect && <Redirect to="/list-event" />} */}
