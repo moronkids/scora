@@ -41,7 +41,7 @@ const PopUp = props => {
     phasex.push(
       <div className="align-content-start flex-wrap pb-2" >
         {
-          popup[1][x].is_active ? <Link to="/" /* onClick={() => { dispatch({ type: HIT_TEAM, payload: [[popup[1][x].id], order || null] }); localStorage.setItem('phase', popup[1][x].id) }}*/>
+          popup[1][x].is_active ? <Link to="/" onClick={() => localStorage.setItem('phase', popup[1][x].id)} /* onClick={() => { dispatch({ type: HIT_TEAM, payload: [[popup[1][x].id], order || null] }); localStorage.setItem('phase', popup[1][x].id) }}*/>
             <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); activePhaseEvent(popup[0], popup[2], [popup[1][x].id, popup[1][x].name]) }}>
               <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div>
               {/* <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div> */}

@@ -32,6 +32,7 @@ export default (state = initialState, { type, payload }: any) => {
             }
             state['event_active'] = payload.data.results[0].event.display_name
             state['phase_active'] = [payload.data.results[0].phase.id, payload.data.results[0].phase.name]
+            localStorage.setItem('phase', payload.data.results[0].phase.id)
             return { ...state }
         }
         case GET_RESET_SCORING: {

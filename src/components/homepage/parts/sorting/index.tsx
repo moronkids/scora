@@ -23,7 +23,7 @@ const Sorting = () => {
     // setTrigger(true)
     // if (trigger) {
     // if (phase_active_.length !== 0) {
-    dispatch({ type: HIT_TEAM, payload: [localStorage.getItem('phase') || phase_active_?.[0], order || null] })
+
     // }
     // setTrigger(false)
     // }

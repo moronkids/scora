@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Homepage from "components/layouts/header";
 import Leaderboards from "components/homepage/parts/leaderboards";
 import Sorting from "components/homepage/parts/sorting";
 import { store } from "redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ListEvent from 'components/list-event';
 // import { Redirect } from "react-router";
-import { Redirect, useHistory } from "react-router";
+import { Redirect, useHistory, useParams } from "react-router";
+import { Hooks } from "providers";
+import { HIT_TEAM } from "redux/actions";
 const Hompage = () => {
   const history = useHistory();
   const { event, team } = useSelector((state: typeof store) => ({
@@ -28,6 +30,18 @@ const Hompage = () => {
   // if (redirect) {
   //   return <Redirect to="/list-event" />
   // }
+  const dispatch = useDispatch();
+  const { name } = useParams();
+  const { phase_active, setphase, phase_, setphase_, order } = useContext(Hooks);
+
+  const { phase, loading, phase_active_ } = useSelector((state: store) => ({
+    phase: state.event.phase,
+    loading: state.loading.loading,
+    phase_active_: state.event.phase_active
+  }))
+  useEffect(() => {
+    dispatch({ type: HIT_TEAM, payload: [localStorage.getItem('phase') || phase_active_?.[0], order || null] })
+  }, [phase])
   const cek_phase = localStorage.getItem('phase')
   if (cek_phase === '0') {
     // return <Redirect to="/forgotpass" />
