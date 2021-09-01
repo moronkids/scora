@@ -16,7 +16,7 @@ const Header = (props: { ishelp: any; headers: string; }) => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  const { phase, team, active_phase, active_event } = useSelector((state: Store) => ({
+  const { phase, team, active_phase, active_event, } = useSelector((state: Store) => ({
     // event: state.event.results[0],
     phase: state.event.phase,
     team: state.event.team,
@@ -28,19 +28,22 @@ const Header = (props: { ishelp: any; headers: string; }) => {
 
 
 
+  const [char, setChar] = useState('')
+  const getShortName = () => {
+    let drop: any = '';
+    let name = active_event?.split(' ');
+    if (name) {
+      for (let index = 0; index < name.length; index++) {
 
-  let char = '';
-  let name = event.split(' ');
-  if (name) {
-    for (let index = 0; index < name.length; index++) {
+        if (index < 2) {
 
-      if (index < 2) {
+          drop += name[index][0]
+          setChar(drop)
+        }
+        else {
 
-        char += name[index][0]
-      }
-      else {
-
-        break;
+          break;
+        }
       }
     }
   }
@@ -51,7 +54,7 @@ const Header = (props: { ishelp: any; headers: string; }) => {
     // dispatch({ type: DO_LOADING, payload: true })
     dispatch({ type: HIT_EVENT });
     dispatch({ type: HIT_PHASE });
-
+    getShortName()
     // dispatch({ type: HIT_TEAM, payload: [phase_active] });
     console.log(phase, "ckck -");
     console.log('lokasi', location)
@@ -64,9 +67,7 @@ const Header = (props: { ishelp: any; headers: string; }) => {
       default:
         break;
     }
-  }, [location]);
-
-
+  }, [location, active_event]);
 
   return (
 

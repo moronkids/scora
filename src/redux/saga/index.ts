@@ -1,3 +1,4 @@
+// /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { Effect, put, call, takeLatest, takeEvery, SagaReturnType } from "redux-saga/effects";
 
@@ -26,7 +27,8 @@ import {
     HIT_PHASE_EVENT,
     GET_PHASE_EVENT,
     HIT_CURRENT_PHASE_EVENT,
-    GET_CURRENT_PHASE_EVENT
+    GET_CURRENT_PHASE_EVENT,
+    GET_STATE
 } from "redux/actions/index";
 // Import all actions
 
@@ -38,7 +40,7 @@ import {
 import {
     apiGetAspectByPhaseEvent,
     apiGetDetailTeam,
-    apiGetEvent, apiGetPhase, apiGetPhaseByEvent, apiGetTeamByPhase, apiPostFavTeam, apiPostFavTeamRemove, apiPostSetCurrent, apiPostSubmitScore
+    apiGetEvent, apiGetPhase, apiGetPhaseByEvent, apiGetPosition, apiGetTeamByPhase, apiPostFavTeam, apiPostFavTeamRemove, apiPostPosition, apiPostSetCurrent, apiPostSubmitScore
 } from "redux/api/event";
 //Import api call
 
@@ -95,7 +97,10 @@ function* getTeam({ payload }: any) {
     try {
         console.log('sempat', payload)
         const team: GetTeam = yield call(apiGetTeamByPhase, payload);
+        const position: GetTeam = yield call(apiGetPosition);
         yield put({ type: GET_TEAM, payload: [team, payload[0]] });
+        yield put({ type: GET_STATE, payload: position.data.results[0] });
+
         // yield put({ type: GET_DETAIL_TEAM, payload: 'reset' });
         yield put({ type: DO_LOADING, payload: false });
     } catch (error) {
@@ -182,7 +187,8 @@ function* postCurrentEvent({ payload }: any) {
     try {
         console.log(payload, "heha")
         const score: postCurrentEvents = yield call(apiPostSetCurrent, { event: payload.phase });
-
+        const position: postCurrentEvents = yield call(apiPostPosition, { phase: payload.id[0] });
+        console.log('teputepu', position)
 
         yield put({ type: GET_CURRENT_PHASE_EVENT, payload: payload });
     } catch (error) {

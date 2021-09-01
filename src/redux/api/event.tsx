@@ -11,6 +11,7 @@ const getAspectByEvent = 'aspect?event=ukode-2021';
 const getAspectByPhaseEvent = 'aspect?event=dailysocial-hackathon&phase=6';
 const getTeamByPhase = 'team?phase=';
 const getDetailTeam = 'participation/team?team_id=';
+const currentPosition = 'state/'
 // const getDetailTeam = 'participation/team?search=';
 // const getTeamByPhase = 'team?phase=11&order=sequence';
 //endpoint GET
@@ -89,6 +90,17 @@ export const apiPostSubmitScore = async (iData: any) => {
 export const apiPostSetCurrent = async (iData: any) => {
     console.log(iData, "heha")
     const datas = await http.post(`${api_logged_api + postCurrent}`, iData);
+    return datas;
+}
+
+export const apiPostPosition = async (iData: any) => {
+    console.log(iData, "debug position")
+    const datas = await http.post(`${api_logged + currentPosition}`, iData);
+    return datas;
+}
+export const apiGetPosition = async (iData: any) => {
+    console.log(iData, "debug position")
+    const datas = await http.get(`${api_logged + currentPosition}`);
     return datas;
 }
 

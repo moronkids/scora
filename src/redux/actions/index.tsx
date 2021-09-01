@@ -7,6 +7,9 @@ export const HIT_LOADING = "HIT_LOADING"
 export const DO_LOADING = "DO_LOADING"
 //LOADING
 
+//STATE
+export const GET_STATE = "GET_STATE"
+//STATE
 //AUTH
 export const HIT_LOGIN = "HIT_LOGIN";
 export const DO_LOGIN = "DO_LOGIN";
