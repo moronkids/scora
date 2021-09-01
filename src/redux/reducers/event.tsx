@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_ASPECT_PHASE_EVENT, GET_CURRENT_PHASE_EVENT, GET_DETAIL_TEAM, GET_EVENT, GET_PHASE, GET_PHASE_EVENT, GET_STATE, GET_TEAM, POST_FAV, POST_SUBMIT_SCORE } from 'redux/actions'
+import { GET_ASPECT_PHASE_EVENT, GET_CURRENT_PHASE_EVENT, GET_DETAIL_TEAM, GET_EVENT, GET_PHASE, GET_PHASE_EVENT, GET_RESET_SCORING, GET_STATE, GET_TEAM, POST_FAV, POST_SUBMIT_SCORE } from 'redux/actions'
 
 // Define your state here
 const initialState = {
@@ -25,6 +25,11 @@ export default (state = initialState, { type, payload }: any) => {
             console.log(payload, 'statex')
             state['event_active'] = payload.event.display_name
             state['phase_active'] = [payload.phase.id, payload.phase.name]
+            return { ...state }
+        }
+        case GET_RESET_SCORING: {
+
+            state['scoring'] = 'reset'
             return { ...state }
         }
         case GET_CURRENT_PHASE_EVENT: {

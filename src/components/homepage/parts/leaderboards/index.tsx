@@ -66,7 +66,7 @@ const Leaderboards = () => {
     }
   }
 
-  if (team !== null && team.length > 1) {
+  if (team !== null && team?.length > 1) {
 
     for (let i = 0; i < team.length; i++) {
       data.push(

@@ -52,7 +52,7 @@ const Scoring = (props: { aspect: any }) => {
             disabled={complete ? false : true}
             width="100%"
           /> : <ButtonScoring
-            name={team[final[1]].total > 0 ? 'Edit Score' : "Scoring"}
+            name={team?.[final[1]]?.total > 0 ? 'Edit Score' : "Scoring"}
 
             padding="13px 55px 13px 55px"
             function={1}

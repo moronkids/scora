@@ -10,6 +10,9 @@ export const DO_LOADING = "DO_LOADING"
 //STATE
 export const GET_STATE = "GET_STATE"
 //STATE
+//STATE
+export const GET_RESET_SCORING = "GET_RESET_SCORING"
+//STATE
 //AUTH
 export const HIT_LOGIN = "HIT_LOGIN";
 export const DO_LOGIN = "DO_LOGIN";
