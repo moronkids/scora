@@ -22,7 +22,7 @@ const Guest = ({ component: Component, ...rest }) => {
   if (token === null) {
     return <Redirect to="/login" />
   }
-  // if (event === null) {
+  // if (event === 'failed') {
   //   return <Redirect to="/list-event" />
   // }
 
@@ -47,19 +47,21 @@ const Guest = ({ component: Component, ...rest }) => {
             <SubmitSuccessPopup />
             {
               rest.header === undefined ? (
-                <Wrapper ishelp={rest.ishelp} withOutHeader={event !== null && rest.withOutHeader} headers={event === null && 'off'}>
+                <Wrapper ishelp={rest.ishelp} withOutHeader={rest.withOutHeader}>
                   {console.log(event, "colss1")}
-                  {
+                  {/* {
                     event !== null ? <Component {...props} /> : <ListEvent />
-                  }
+                  } */}
+                  <Component {...props} />}
 
                 </Wrapper>
               ) : (
                 <Wrapper headers={'off'}>
                   {console.log(event, "colss")}
-                  {
+                  {/* {
                     event !== null ? <Component {...props} /> : <ListEvent />
-                  }
+                  } */}
+                  <Component {...props} />
                 </Wrapper>
               )
             }

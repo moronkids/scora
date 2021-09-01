@@ -11,7 +11,7 @@ const initialState = {
     detail_team: [],
     aspect: [],
     fav: 'reset',
-    event_active: null,
+    event_active: 'default',
     phase_active: [],
     scoring: ''
 
@@ -22,9 +22,16 @@ export default (state = initialState, { type, payload }: any) => {
     // console.log(payload, 'hasilnya ngab');
     switch (type) {
         case GET_STATE: {
-            console.log(payload, 'statex')
-            state['event_active'] = payload.event.display_name
-            state['phase_active'] = [payload.phase.id, payload.phase.name]
+            console.log(payload.data.results.length, 'statex')
+            if (payload.data.results.length === 0) {
+
+                state['event_active'] = 'failed'
+                return {
+                    ...state
+                }
+            }
+            state['event_active'] = payload.data.results[0].event.display_name
+            state['phase_active'] = [payload.data.results[0].phase.id, payload.data.results[0].phase.name]
             return { ...state }
         }
         case GET_RESET_SCORING: {
@@ -77,7 +84,7 @@ export default (state = initialState, { type, payload }: any) => {
             if (payload.status !== 200) return { ...state };
             state['phase'] = payload.data.results;
             console.log('pehung', state['phase_active'])
-            if (state['phase_active'].length <= 0) {
+            if (state['phase_active']?.length <= 0) {
                 // state['phase_active'] = [payload.data.results[0].id, payload.data.results[0].name]
                 let data = null
                 payload.data.results.map((val, i) => {

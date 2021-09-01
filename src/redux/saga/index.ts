@@ -97,7 +97,7 @@ function* getTeam({ payload }: any) {
     try {
         console.log('sempat', payload)
         const position: GetTeam = yield call(apiGetPosition);
-        yield put({ type: GET_STATE, payload: position.data.results[0] });
+        yield put({ type: GET_STATE, payload: position });
         const team: GetTeam = yield call(apiGetTeamByPhase, payload);
         yield put({ type: GET_TEAM, payload: [team, payload[0]] });
 

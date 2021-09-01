@@ -84,12 +84,12 @@ const Header = (props: { ishelp: any; headers: string; }) => {
 
       <img
         src={Waves}
-        className={`header-scora__wave1 d-none ${location.pathname === '/list-event' || active_event === null ? 'd-none' : 'd-sm-block'}
+        className={`header-scora__wave1 d-none ${location.pathname === '/list-event' ? 'd-none' : 'd-sm-block'}
           `}
       />
       <img
         src={WavesMobile}
-        className={`header-scora__wavex d-sm-none ${location.pathname === '/list-event' || active_event === null ? 'd-none' : 'd-block'} `}
+        className={`header-scora__wavex d-sm-none ${location.pathname === '/list-event' ? 'd-none' : 'd-block'} `}
       />
       <div className="sddf" style={{ background: 'white' }}></div>
       <div className="container">
