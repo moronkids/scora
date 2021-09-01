@@ -67,7 +67,7 @@ const Header = (props: { ishelp: any; headers: string; }) => {
       default:
         break;
     }
-  }, [location, active_event]);
+  }, []);
 
   return (
 

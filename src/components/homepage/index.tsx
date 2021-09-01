@@ -43,7 +43,7 @@ const Hompage = () => {
   else if (cek_phase !== '0') {
     if (event === null) {
 
-      window.location.href = '/list-event?sort=previous'
+      // window.location.href = '/list-event?sort=previous'
     }
   }
   return (

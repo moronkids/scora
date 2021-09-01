@@ -27,7 +27,7 @@ const ListEvent = (props) => {
       console.log('acitive phase', val)
       await dispatch({ type: HIT_PHASE_EVENT, payload: [val.short_name, i] });
     });
-  }, [phase]);
+  }, [event]);
   let current = [];
   let previous = [];
   console.log(/* phase, event, */ event, arrPhase, 'active phase 0');

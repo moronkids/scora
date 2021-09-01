@@ -54,7 +54,7 @@ const Scoring = (props) => {
       }
       setComplete(true);
     }
-  }, [id, score, criteria, complete, data]);
+  }, [id, score]);
   // console.log(team, "inikah")
   return (
     <div className={`sticky-top ${scoring ? "" : "d-none"}`}>

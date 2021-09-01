@@ -74,7 +74,7 @@ export default (state = initialState, { type, payload }: any) => {
                 });
             })
             // console.log(data, "sdsd")
-            state['event_active'] = data
+            // state['event_active'] = data
             return {
                 ...state,
             };
