@@ -3,6 +3,7 @@ import defaultAxios from "axios";
 import { api_logged, api_non_logged } from 'helper/api';
 import { http } from 'helper/http';
 import { useState } from 'react';
+import { apiGetEvent, apiPostPosition } from './event';
 const axios = defaultAxios.create({
     timeout: 60000,
     withCredentials: false,
@@ -17,7 +18,8 @@ const axios = defaultAxios.create({
 
 export const apiLogin = async (iData: any) => {
 
-    const currentPosition = 'state/'
+    const currentPosition = 'state/';
+    const getEvent = 'event';
     const datas = await http.post(`${api_non_logged}authentication/event/login/`, iData);
     console.log(datas, "kokogtg")
     // console.log()
@@ -25,24 +27,52 @@ export const apiLogin = async (iData: any) => {
     let url = 'default'
     if (datas.data.status === 200) {
         if (localStorage.getItem('token')) {
-            // alert('sini gengs')
-            const post = await axios.get(`${api_logged}${currentPosition}`, {
+            // get position
+            await axios.get(`${api_logged}${currentPosition}`, {
                 headers: { 'Authorization': `token ${localStorage.getItem('token')}` }
             }).then(function (response) {
-                console.log(response.data.results.length, 'Authenticated');
                 if (response.data.results.length === 0) {
-                    // alert('masuk')
-                    // window.location.href = "/list-event";
-                    // return
                     url = '/list-event'
+                    localStorage.setItem('phase', '0')
+                }
+                else {
+                    alert()
+                    localStorage.setItem('phase', response.data.results[0].phase.id)
+
                 }
             }).catch(function (error) {
+                console.log(error, "err")
+                return datas
+            });
+            // get event
+            await axios.get(`${api_logged}${getEvent}`, {
+                headers: { 'Authorization': `token ${localStorage.getItem('token')}` }
+            }).then(function (response) {
+                console.log(response, "event")
+                if (response.data.results.length === 0) {
+                    url = '/list-event?sort=current'
+                }
+                else {
+
+                    response.data.results.map((val) => {
+                        if (val.is_active) {
+                            url = '/list-event?sort=current'
+                        }
+                        else {
+                            url = '/list-event?sort=previous'
+                        }
+                    })
+                }
+            }).catch(function (error) {
+                console.log(error, "err")
                 return datas
             });
 
         }
-        if (url !== 'default') {
 
+        console.log(url, 'tes url')
+        alert('masuk sini')
+        if (url !== 'default') {
             window.location.href = url
         }
         else {

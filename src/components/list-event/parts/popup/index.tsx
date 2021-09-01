@@ -7,14 +7,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Store } from "redux";
 import { Link, useLocation } from 'react-router-dom';
 import close_popup from 'assets/img/icons/Icon Close.svg'
-import { HIT_CURRENT_PHASE_EVENT } from "redux/actions";
+import { HIT_CURRENT_PHASE_EVENT, HIT_TEAM } from "redux/actions";
 const PopUp = props => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const { stage, setStage, popup, setProfile, setphase, phase_active, setphase_, setEvent } = useContext(Hooks);
-  const { event, phase } = useSelector((state: Store) => ({
+  const { stage, setStage, popup, setProfile, setphase, phase_active, setphase_, setEvent, order } = useContext(Hooks);
+  const { event, phase, phase_active_ } = useSelector((state: Store) => ({
     event: state.event.results,
-    phase: state.event.phase
+    phase: state.event.phase,
+    phase_active_: state.event.phase_active
   }));
   useEffect(() => {
     // alert("sdsd")
@@ -40,7 +41,7 @@ const PopUp = props => {
     phasex.push(
       <div className="align-content-start flex-wrap pb-2" >
         {
-          popup[1][x].is_active ? <Link to="/">
+          popup[1][x].is_active ? <Link to="/" onClick={() => { dispatch({ type: HIT_TEAM, payload: [[popup[1][x].id], order || null] }); localStorage.setItem('phase', popup[1][x].id) }}>
             <div className={`phase ${popup[1][x].is_active && `active`}`} onClick={e => { setphase([popup[1][x].id]); setphase_(popup[1][x].name); setEvent(popup[0]); setStage(false); changePhase(popup[2]); activePhaseEvent(popup[0], popup[2], [popup[1][x].id, popup[1][x].name]) }}>
               <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div>
               {/* <div className={`title-stage ${popup[1][x].is_active && `active`}`}>{popup[1][x].name}</div> */}

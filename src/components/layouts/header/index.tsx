@@ -98,6 +98,9 @@ const Header = (props: { ishelp: any; headers: string; }) => {
             <Link
               to="/"
               // target="_blank"
+              // className={`${!active_phase !== null && `disabled`}`}
+              onClick={(event) => active_phase === null && event.preventDefault()}
+              style={{ cursor: active_phase === null && 'not-allowed' }}
               rel="noopener noreferrer"
             >
               <img

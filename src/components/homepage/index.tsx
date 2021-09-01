@@ -28,6 +28,18 @@ const Hompage = () => {
   // if (redirect) {
   //   return <Redirect to="/list-event" />
   // }
+  const cek_phase = localStorage.getItem('phase')
+  if (cek_phase === '0') {
+    // return <Redirect to="/forgotpass" />
+    // if (window.location.pathname !== '/list-event?sort=current' && window.location.pathname !== '/list-event?sort=previous') {
+
+    window.location.href = '/list-event?sort=current'
+    // }
+    // alert('jadiin')
+    // return <Redirect to="/list-event" />
+    // return
+    // return <Redirect to="/login" />
+  }
   return (
     <>
       {/* {redirect && <Redirect to="/list-event" />} */}

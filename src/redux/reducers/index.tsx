@@ -31,6 +31,7 @@ const appReducer = combineReducers({
 const rootReducer = (state: any, action: any) => {
     if (action.type === "DO_LOGOUT") {
         localStorage.removeItem("token");
+        localStorage.removeItem("phase");
         localStorage.removeItem("persist:root");
         localStorage.removeItem("persist:auth");
         // localStorage.removeItem("persist:event");

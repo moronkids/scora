@@ -1,24 +1,31 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Hooks } from "providers/index";
 import { useDispatch, useSelector } from "react-redux";
 import { DO_LOADING, HIT_LOADING, HIT_TEAM } from "redux/actions";
 import { Store } from "redux";
 const Sorting = () => {
   const dispatch = useDispatch();
-  const { phase, team, phase_active_ } = useSelector((state: Store) => ({
+  const { phase, team, phase_active_, event } = useSelector((state: Store) => ({
     phase: state.event.phase,
     team: state.event.detail_team,
+    event: state.event.event_active,
     phase_active_: state.event.phase_active
   }))
+  const [trigger, setTrigger] = useState(false)
   const { sorting, setSorting, setorder, order, update_team, phase_active, currentPhase, setCurrentPhase, setbgActive } = useContext(Hooks);
   useEffect(() => {
 
     // dispatch({ type: HIT_LOADING, payload: true })
     // dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] });
     console.log('sempat', order, phase_active_)
-    dispatch({ type: HIT_TEAM, payload: [phase_active_?.[0], order || null] })
-    // if (phase_active_?.length !== 0) {
-    //   dispatch({ type: HIT_TEAM, payload: [phase_active_?.[0], order || null] })
+    // dispatch({ type: HIT_TEAM, payload: [phase_active_?.[0], order || null] })
+    // if(phas)
+    // setTrigger(true)
+    // if (trigger) {
+    // if (phase_active_.length !== 0) {
+    dispatch({ type: HIT_TEAM, payload: [localStorage.getItem('phase') || phase_active_?.[0], order || null] })
+    // }
+    // setTrigger(false)
     // }
   }, [order])
   return (

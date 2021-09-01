@@ -10,21 +10,23 @@ import { useSelector } from "react-redux";
 import { store } from "redux";
 import ListEvent from 'pages/list-event'
 const Guest = ({ component: Component, ...rest }) => {
-
-  const { event } = useSelector((state: typeof store) => ({ event: state?.event?.event_active }))
+  const search = window.location.search;
+  const params = new URLSearchParams(search);
+  const foo = params.get('sort');
+  const { event } = useSelector((state: typeof store) => ({ event: state?.event?.phase_active }))
   const { contactUs, setContactUs, sorting, profile, setProfile, setSorting, bgActive, setbgActive } = useContext(Hooks);
   useEffect(() => {
     if (sorting || profile) {
       setbgActive(true)
     }
-  }, [sorting, profile, event])
+
+  }, [sorting, profile])
   const token = localStorage.getItem('token');
+  console.log(!localStorage.getItem('phase'), "sd")
+
   if (token === null) {
     return <Redirect to="/login" />
   }
-  // if (event === 'failed') {
-  //   return <Redirect to="/list-event" />
-  // }
 
   return (
     <Route

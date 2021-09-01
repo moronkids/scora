@@ -3,19 +3,24 @@ import Event from 'components/list-event/parts/event'
 import { useDispatch, useSelector } from "react-redux";
 import { GET_EVENT, GET_PHASE, HIT_PHASE, HIT_PHASE_EVENT } from "redux/actions";
 import { Store } from "redux";
-const ListEvent = () => {
+const ListEvent = (props) => {
   const dispatch = useDispatch();
   const { event, phase, phaseArr } = useSelector((state: Store) => ({
     event: state.event.results,
     phase: state.event.phase,
     phaseArr: state.event.phase_arr
   }))
-
+  const query = new URLSearchParams(props.location.search);
+  const search = window.location.search;
+  const params = new URLSearchParams(search);
+  const foo = params.get('sort');
   const [tab, setTab] = useState(1);
+
   let arrPhase: never[] = [];
   useEffect(() => {
     dispatch({ type: GET_EVENT });
     //display_name
+    setTab(foo === 'current' ? 1 : 2)
     //short_name
     // dispatch({ type: GET_PHASE });
     event.forEach(async (val, i) => {
@@ -46,6 +51,7 @@ const ListEvent = () => {
     <div className="scora-event container">
       <div className="scora-event__tab d-flex">
         <div onClick={e => setTab(1)}>
+          {console.log(foo, "joh")}
           <div id="1" className={`${tab === 1 ? `tab active` : `tab`}`}>
             Current Event
           </div>
@@ -83,7 +89,7 @@ const ListEvent = () => {
           </div>
         </>}
       </div>
-    </div>
+    </div >
   );
 };
 
