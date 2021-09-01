@@ -59,6 +59,7 @@ const Preview = props => {
             width="24"
             className="mr-2"
             onClick={e => setPreviewScore(!previewScore)}
+            style={{ cursor: 'pointer' }}
           />
           <div className="d-flex title justify-content-start w-100 sticky-top">
             Preview Score
