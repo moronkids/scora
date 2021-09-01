@@ -21,7 +21,7 @@ const Body = props => {
   }))
   useEffect(() => {
     dispatch({ type: HIT_TEAM, payload: [localStorage.getItem('phase') || phase_active_?.[0], order || null] })
-  }, [phase])
+  }, [phase, localStorage.getItem('phase')])
   return (
     <>
       {loading && <div className="contact-us" style={{ position: "fixed", zIndex: '99999999999' }}>

@@ -96,11 +96,11 @@ function* getTeam({ payload }: any) {
     yield put({ type: DO_LOADING, payload: true });
     try {
         console.log('sempat', payload)
-        const position: GetTeam = yield call(apiGetPosition);
-        yield put({ type: GET_STATE, payload: position });
         const team: GetTeam = yield call(apiGetTeamByPhase, payload);
         yield put({ type: GET_TEAM, payload: [team, payload[0]] });
 
+        const position: GetTeam = yield call(apiGetPosition);
+        yield put({ type: GET_STATE, payload: position });
         // yield put({ type: GET_DETAIL_TEAM, payload: 'reset' });
         yield put({ type: DO_LOADING, payload: false });
     } catch (error) {

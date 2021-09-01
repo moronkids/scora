@@ -17,7 +17,7 @@ const Sorting = () => {
 
     // dispatch({ type: HIT_LOADING, payload: true })
     // dispatch({ type: HIT_TEAM, payload: [phase_active[0] || phase_active, order] });
-    console.log('sempat', order, phase_active_)
+    console.log('sempat', order, localStorage.getItem('phase'))
     // dispatch({ type: HIT_TEAM, payload: [phase_active_?.[0], order || null] })
     // if(phas)
     // setTrigger(true)
@@ -27,7 +27,7 @@ const Sorting = () => {
     // }
     // setTrigger(false)
     // }
-  }, [order])
+  }, [order, phase_active_])
   return (
     <>
       <ul
