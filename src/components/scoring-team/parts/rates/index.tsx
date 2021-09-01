@@ -46,7 +46,7 @@ const Rates = (props) => {
     if (!props.scoring) {
       if (props.aspect !== undefined) {
 
-        if (criteria.length <= props.aspect) {
+        if (props.criteria.length <= props.aspect) {
           let data = [...criteria];
           for (let index = 0; index < props.aspect; index++) {
             data[index] = ['Not Rated', '-', 'Not Rated']
@@ -154,7 +154,7 @@ const Rates = (props) => {
             ) : (
               // <></>
               <h3 style={{
-                color: criteria[criteriax.aspect_id - 1][1] <= 2 && '#EF3A3A'
+                color: criteria[criteriax.aspect_id - 1]?.[1] <= 2 && '#EF3A3A'
               }}
                 dangerouslySetInnerHTML={{ __html: criteria.length > 0 && criteria[criteriax.aspect_id - 1]?.[2] }}
               ></h3>
@@ -164,8 +164,8 @@ const Rates = (props) => {
             ) : (
               // <p>{criteria[criteriax.aspect_id - 1][1]}</p>
               <p style={{
-                color: criteria[criteriax.aspect_id - 1][1] <= 2 && '#EF3A3A'
-              }}>{criteria.map((val) => criteriax.aspect_id === val[0] && val[1])}</p>
+                color: criteria[criteriax.aspect_id - 1]?.[1] <= 2 && '#EF3A3A'
+              }}>{criteria.map((val) => criteriax.aspect_id === val[0] && val?.[1])}</p>
             )}
           </div>
         </div>
