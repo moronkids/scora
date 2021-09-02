@@ -26,7 +26,7 @@ const Guest = ({ component: Component, ...rest }) => {
 
 
   if (token === null) {
-    return <Redirect to="/" />
+    return <Redirect to="/login" />
   }
   // alert(window.location.pathname)
   if (phase === '0') {
