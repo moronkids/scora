@@ -25,19 +25,32 @@ const ForgotPass = () => {
           <h2 className="text-center" style={{ maxWidth: '390px', paddingTop: '20px' }}>
             {/* Please call your organizer/admin officer this <b>[Event Name]</b>{" "}
               or{" "} */}
-            {`Please call ${event} 's staff or click here to`}
-            <b
-              style={{ color: "#005F61", cursor: 'pointer' }}
-              onClick={e => setContactUs(!contactUs)}
-            >
+            {event === 'default' ? `To change your password, please contact us at` : `Please call ${event} 's staff or click here to`}
+            {event === 'default' ? <a href="mailto:tech@dailysocial.id" >
+              <b
+                style={{ color: "#005F61", cursor: 'pointer' }}
+              // onClick={e => setContactUs(!contactUs)}
+              >
+                &nbsp;tech@dailysocial.id
+              </b></a> : <b
+                style={{ color: "#005F61", cursor: 'pointer' }}
+                onClick={e => setContactUs(!contactUs)}
+              >
               &nbsp;Contact Us
-            </b>
+            </b>}
             .
           </h2>
         </div>
-        <Link to="/">
-          <h3>Back to Leaderboard</h3>
-        </Link>
+        {
+          event !== 'default' ?
+            <Link to="/">
+              <h3>Back to Leaderboard</h3>
+            </Link> :
+            <Link to="/list-event?sort=current">
+              <h3>Back to list event</h3>
+            </Link>
+        }
+
       </div>
     </div>
   );
