@@ -11,11 +11,11 @@ const Rates = (props) => {
 
   // setCriteria()
   // console.log(props.criteria, "bedesx")
-  criteriax.aspect_id = props.index + 1
   useEffect(() => {
     let scr = ''
     // setCriteria([])
     if (criteriax !== undefined) {
+      criteriax.aspect_id = props.index + 1
       switch (criteriax.score) {
         case 1:
           scr = 'Poor'
@@ -59,7 +59,7 @@ const Rates = (props) => {
       if (props.hide === false) {
         console.log('anjerrr', props.hide)
         console.log(criteria, "posing")
-        setCriteria(criteria => [...criteria, [criteria.length < 0 ? 1 : criteria.length + 1, criteriax.score, scr]])
+        setCriteria(criteria => [...criteria, [criteria.length < 0 ? 1 : criteria.length + 1, criteriax?.score, scr]])
         setN(n + 1)
       }
     }
