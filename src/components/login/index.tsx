@@ -11,7 +11,7 @@ const Login = () => {
   }))
   useEffect(() => {
 
-  }, [loading])
+  }, [])
   return (
     <>
       {loading && <div className="contact-us" style={{ position: "unset", height: '1px', zIndex: '99999999999' }}>

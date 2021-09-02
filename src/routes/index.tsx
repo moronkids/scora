@@ -23,7 +23,7 @@ const Routes = () => {
                 <LoggedRoutes exact path="/list-event" component={ListEvent} header={false} />
                 <LoggedRoutes exact path="/forgotpass-logged" component={ChangePass} withOutHeader={true} />
                 {/* login routes */}
-
+                <Route exact path="/hello" />
                 {/* guest routes */}
                 <GuestRoutes exact path="/forgotpass" component={ForgotPass} />
                 <GuestRoutes exact path="/login" component={LoginPage} />

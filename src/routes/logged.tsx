@@ -22,10 +22,17 @@ const Guest = ({ component: Component, ...rest }) => {
 
   }, [sorting, profile])
   const token = localStorage.getItem('token');
-  console.log(!localStorage.getItem('phase'), "sd")
+  const phase = localStorage.getItem('phase');
+
 
   if (token === null) {
-    return <Redirect to="/login" />
+    return <Redirect to="/" />
+  }
+  // alert(window.location.pathname)
+  if (phase === '0') {
+    if (window.location.pathname === '/') {
+      return <Redirect to="/list-event" />
+    }
   }
 
   return (

@@ -46,7 +46,7 @@ const Hompage = () => {
   if (cek_phase === '0') {
     // return <Redirect to="/forgotpass" />
     // if (window.location.pathname !== '/list-event?sort=current' && window.location.pathname !== '/list-event?sort=previous') {
-
+    // return <></>
     window.location.href = '/list-event?sort=current'
     // }
     // alert('jadiin')
