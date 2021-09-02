@@ -185,7 +185,7 @@ function* postSubmitScoreSaga({ payload }: any) {
 type postCurrentEvents = SagaReturnType<typeof apiPostSetCurrent>
 function* postCurrentEvent({ payload }: any) {
     try {
-        console.log(payload, "heha")
+        // console.log(payload, "heha")
         const score: postCurrentEvents = yield call(apiPostSetCurrent, { event: payload.phase });
         const position: postCurrentEvents = yield call(apiPostPosition, { phase: payload.id[0] });
         console.log('teputepu', position)
