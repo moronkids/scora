@@ -22,7 +22,7 @@ export default (state = initialState, { type, payload }: any) => {
     // console.log(payload, 'hasilnya ngab');
     switch (type) {
         case GET_STATE: {
-            console.log(payload.data.results.length, 'statex')
+            console.log(payload.data.results[0].phase.id, 'statex')
             if (payload.data.results.length === 0) {
 
                 state['event_active'] = 'failed'
@@ -32,7 +32,7 @@ export default (state = initialState, { type, payload }: any) => {
             }
             state['event_active'] = payload.data.results[0].event.display_name
             state['phase_active'] = [payload.data.results[0].phase.id, payload.data.results[0].phase.name]
-            localStorage.setItem('phase', payload.data.results[0].phase.id)
+            // localStorage.setItem('phase', payload.data.results[0].phase.id)
             return { ...state }
         }
         case GET_RESET_SCORING: {
@@ -119,9 +119,16 @@ export default (state = initialState, { type, payload }: any) => {
             };
         }
         case GET_TEAM: {
+            console.log(payload, "buatteam -data")
             if (payload[0] === undefined) return { ...state }
             if (payload[0].status !== 200) return { ...state };
-            state['team'] = payload[0].data.results;
+            if (payload[0].data.results.length > 0) {
+
+                state['team'] = payload[0].data.results;
+            }
+            else {
+                state['team'] = []
+            }
 
             // state['phase_active'] = payload[1];
             return {

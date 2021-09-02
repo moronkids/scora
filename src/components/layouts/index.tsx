@@ -20,7 +20,7 @@ const Body = props => {
     phase_active_: state.event.phase_active
   }))
   useEffect(() => {
-    dispatch({ type: HIT_TEAM, payload: [localStorage.getItem('phase') || phase_active_?.[0], order || null] })
+    // dispatch({ type: HIT_TEAM, payload: [localStorage.getItem('phase'), order || null] })
   }, [phase, localStorage.getItem('phase')])
   return (
     <>

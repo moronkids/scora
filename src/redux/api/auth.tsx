@@ -36,7 +36,7 @@ export const apiLogin = async (iData: any) => {
                     localStorage.setItem('phase', '0')
                 }
                 else {
-                    alert()
+                    // alert()
                     localStorage.setItem('phase', response.data.results[0].phase.id)
 
                 }
@@ -71,7 +71,7 @@ export const apiLogin = async (iData: any) => {
         }
 
         console.log(url, 'tes url')
-        alert('masuk sini')
+        // alert('masuk sini')
         if (url !== 'default') {
             window.location.href = url
         }

@@ -95,7 +95,7 @@ type GetTeam = SagaReturnType<typeof apiGetTeamByPhase>
 function* getTeam({ payload }: any) {
     yield put({ type: DO_LOADING, payload: true });
     try {
-        console.log('sempat', payload)
+        console.log('buatteam', payload)
         const team: GetTeam = yield call(apiGetTeamByPhase, payload);
         yield put({ type: GET_TEAM, payload: [team, payload[0]] });
 

@@ -43,14 +43,22 @@ export const apiGetPhaseByEvent = async (iData: any) => {
 export const apiGetTeamByPhase = async (iData: any) => {
     // const phasex = ;
     // alert('hambuh')
-    console.log(iData, "phase")
+    console.log(iData, "phasesini")
     const phasex = iData[0] ? iData[0] : 1;
+    if (phasex !== 1) {
+        // alert('heh')
+        const order = iData && iData[1] ? iData[1] : 'sequence';
+        const datas = await http.get(`${api_logged + getTeamByPhase + phasex + `&order=` + order}`);
+        console.log('sempat', datas, Date.now())
+        return datas;
+    }
 
-    const order = iData && iData[1] ? iData[1] : 'sequence';
-    const datas = await http.get(`${api_logged + getTeamByPhase + phasex + `&order=` + order}`);
-    console.log('sempat', datas, Date.now())
+    return {
+        data: {
+            results: []
+        }
+    }
 
-    return datas;
 }
 
 export const apiGetDetailTeam = async (iData: any) => {
