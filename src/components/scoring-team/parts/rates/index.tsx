@@ -68,7 +68,7 @@ const Rates = (props) => {
     }
 
 
-  }, [props.scoring, name, location, criteriax]);
+  }, [props.scoring, name, location]);
 
   return (
     <div

@@ -21,7 +21,7 @@ const DetailTeam = () => {
 
     //fetch detail team when variable name is changed
     dispatch({ type: HIT_DETAIL_TEAM, payload: final[2] })
-  }, [name, location, criteria])
+  }, [name, location])
   return (
     <div className="detailteam-scora">
       <DetailTeams />
