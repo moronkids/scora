@@ -27,7 +27,7 @@ const Scoring = (props: { aspect: any }) => {
       // setCriteria([])
       setNextTeam(false);
     }
-  }, [scoring, previewScore, team]);
+  }, [scoring, previewScore, team, criteria]);
 
   return (
     <div className="scoring-scora fixed-bottom d-md-none d-flex justify-content-between px-3 " style={{ columnCount: scoring ? '1' : '2' }}>

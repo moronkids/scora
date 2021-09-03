@@ -57,15 +57,18 @@ const Rates = (props) => {
     }
     else {
       if (props.hide === false) {
-        console.log('anjerrr', props.hide)
-        console.log(criteria, "posing")
-        setCriteria(criteria => [...criteria, [criteria.length < 0 ? 1 : criteria.length + 1, criteriax?.score, scr]])
-        setN(n + 1)
+        if (criteria.length <= props.aspect) {
+
+          console.log('anjerrr', props.hide)
+          console.log(criteria, "posing")
+          setCriteria(criteria => [...criteria, [criteria.length < 0 ? 1 : criteria.length + 1, criteriax?.score, scr]])
+          setN(n + 1)
+        }
       }
     }
 
 
-  }, [props.scoring, name, location]);
+  }, [props.scoring, name, location, criteriax]);
 
   return (
     <div
